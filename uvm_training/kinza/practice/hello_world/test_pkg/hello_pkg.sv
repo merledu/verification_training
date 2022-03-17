@@ -1,19 +1,28 @@
-/*-----------------------------------------------------------------
-File name     : run.f
-Developer     : Kinza Qamar Zaman
-Created       : 14-Mar-22
-Description   : Basic UVM hello_world example 
-Notes         : From the Mentor "SystemVerilog UVM" training
--------------------------------------------------------------------
-
------------------------------------------------------------------*/
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+// Company:        MICRO-ELECTRONICS RESEARCH LABORATORY                                             //
+//                                                                                                   //
+// Engineers:      Kinza Qamar Zaman - Verification                                                  //
+//                                                                                                   //
+// Additional contributions by:                                                                      //
+//                                                                                                   //
+// Create Date:    14-FEB-2022                                                                       //
+// Design Name:    hello_pkg                                                                         //
+// Module Name:    hello_pkg.sv                                                                      //
+// Project Name:   Basic UVM example of hello world, illustrating the basic structure of UVM class   //
+//				   methodology                                                            	         //
+// Language:       SystemVerilog - UVM                                                               //
+//                                                                                                   //
+// Description:    This module start the execution of uvm_phases                                     //
+//                                                                                                   //
+// Revision Date:                                                                                    //
+//                                                                                                   //
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 package hello_pkg;
 `include "uvm_macros.svh" //Includes uvm macros utility
 import uvm_pkg::*; //import uvm base classes
 
 class hello_world extends uvm_test;
-
 //Register component in factory 
 `uvm_component_utils(hello_world)
 
@@ -34,5 +43,4 @@ function void end_of_elaboration_phase(uvm_phase phase);
 endfunction : end_of_elaboration_phase
 
 endclass
-
 endpackage

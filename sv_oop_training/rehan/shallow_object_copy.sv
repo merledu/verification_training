@@ -27,8 +27,8 @@ module top();
 		// Constructor Method
 		function new(int    age,
                  string name);
-      this.age = age;          // this.age shows that the age is from the class property
-      this.name  name;
+      this.age  = age;          // this.age shows that the age is from the class property
+      this.name = name;
 		endfunction //new()
 		// More methods
 		function void print();

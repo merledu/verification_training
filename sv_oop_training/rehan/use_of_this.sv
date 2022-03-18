@@ -1,15 +1,24 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: Micro Electronics Research Lab
-// Engineer: Rehan Ejaz
-// Create Date: 18.03.2022 
-// Design Name: OOP Animal Class Systemverilog
-// Module Name: top
-// Description: OOP based CLASS to understand basic Classes of system verilog and their properties
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-//////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Company:        MICRO-ELECTRONICS RESEARCH LABORATORY                                               //
+//                                                                                                     //
+// Engineers:      Rehan Ejaz - Verification                                                           //
+//                                                                                                     //
+// Additional contributions by:                                                                        //
+//                                                                                                     //
+// Create Date:    18-MARCH-2022                                                                       //
+// Design Name:    use of this                                                                         //
+// Module Name:    use_of_this.sv                                                                      //
+// Project Name:   SystemVerilog OOP Training                                                          //
+// Language:       SystemVerilog - OOP                                                                 //
+//                                                                                                     //
+// Description:                                                                                        //
+//  Animal class implemented in SystemVerilog which helps in understanding the use of this operator    //
+//                                                                                                     //
+//                                                                                                     //
+// Revision Date:                                                                                      //
+//                                                                                                     //
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
 module top();
 	class Animal;
 			// Properties (Variables)

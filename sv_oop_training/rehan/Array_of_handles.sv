@@ -32,7 +32,7 @@ module top();
 				#1s age++;
 		endtask
 
-	endclass           //Animal
+	endclass //Animal
 
 	Animal farm_h[4];  //array of handles created 
 

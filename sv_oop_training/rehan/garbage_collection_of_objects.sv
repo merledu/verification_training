@@ -31,7 +31,7 @@ module top();
 				#1s age++;
 		endtask
 
-	endclass           //Animal
+	endclass//Animal
 
 	Animal a_h,  // handle a declared
 	       b_h;  // handle b declared

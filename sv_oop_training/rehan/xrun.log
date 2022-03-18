@@ -1,8 +1,10 @@
 xrun(64): 20.09-s010: (c) Copyright 1995-2021 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	20.09-s010: Started on Mar 18, 2022 at 19:17:12 PKT
+TOOL:	xrun(64)	20.09-s010: Started on Mar 18, 2022 at 20:16:48 PKT
 xrun
 	shallow_object_copy.sv
-	-access +rwc
+Recompiling... reason: file './shallow_object_copy.sv' is newer than expected.
+	expected: Fri Mar 18 20:13:01 2022
+	actual:   Fri Mar 18 20:16:45 2022
 file: shallow_object_copy.sv
 	module worklib.top:sv
 		errors: 0, warnings: 0
@@ -13,8 +15,8 @@ file: shallow_object_copy.sv
 xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.top:sv <0x461a5441>
-			streams:   9, words:  4627
+		worklib.top:sv <0x4fa7a1ff>
+			streams:   9, words:  4444
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
@@ -34,4 +36,4 @@ Animal: 'gumpy' age=1
 Animal: 'gumpy' age=1
 xmsim: *W,RNQUIE: Simulation is complete.
 xcelium> exit
-TOOL:	xrun(64)	20.09-s010: Exiting on Mar 18, 2022 at 19:17:15 PKT  (total: 00:00:03)
+TOOL:	xrun(64)	20.09-s010: Exiting on Mar 18, 2022 at 20:16:49 PKT  (total: 00:00:01)

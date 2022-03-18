@@ -1,3 +1,1 @@
-s1(18Mar2022:19:16:36):  xrun shallow_object_copy.sv -access +rwc 
-s2(18Mar2022:19:17:12):  xrun shallow_object_copy.sv -access +rwc 
-s3(18Mar2022:19:22:01):  xrun -clean 
+s1(18Mar2022:20:22:14):  xrun -clean 

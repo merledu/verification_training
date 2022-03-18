@@ -37,11 +37,11 @@ module top();
 
 	endclass //Animal
 
-	Animal a_h,
-         b_h;
+	Animal a_h, // handle for object 1
+         b_h; // handle for second object
 
 	initial begin
-		a_h = new(.age(1), .name("gumpy"));
+		a_h = new(.age(1), .name("gumpy")); // creating 
     b_h = new a_h;
     a_h.print();
     b_h.print();

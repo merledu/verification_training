@@ -30,17 +30,20 @@ module top();
     endfunction
 
   endclass // Mouth
+  
   class Animal;
     Mouth m_h;
 			// Properties (Variables)
 		int age;
-		// Constructor Method
+		
+    // Constructor Method
 		function new(int age,
                      teeth);
       this.age  = age;
       m_h = new(teeth); // this.age shows that the age is from the class property
 		endfunction //new()
-		// More methods
+		
+    // More methods
 		function void print();
 			$display("Animal: '%0d' age=%0d",m_h.teeth, age);        
 		endfunction

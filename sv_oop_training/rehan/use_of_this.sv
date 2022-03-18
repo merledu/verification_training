@@ -2,14 +2,13 @@
 //////////////////////////////////////////////////////////////////////////////////
 // Company: Micro Electronics Research Lab
 // Engineer: Rehan Ejaz
-// Create Date: 14.03.2022 11:18:36
+// Create Date: 18.03.2022 
 // Design Name: OOP Animal Class Systemverilog
 // Module Name: top
 // Description: OOP based CLASS to understand basic Classes of system verilog and their properties
 // Revision:
 // Revision 0.01 - File Created
 // Additional Comments:
-// 
 //////////////////////////////////////////////////////////////////////////////////
 module top();
 	class Animal;
@@ -17,31 +16,27 @@ module top();
 		int age    ;
 		string name;
 		// Constructor Method
-		function new();
-			age = 0  ;
-			name = "";
+		function new(int    age,
+                 string name);
+      this.age = age;          // this.age shows that the age is from the class property
+      this.name  name;
 		endfunction //new()
 		// More methods
 		function void print();
 			$display("Animal: '%s' age=%0d",name, age);        
 		endfunction
 
-		task growOld(input int how_long);
-			repeat(how_long)
-				#1s age++;
-		endtask
-
 	endclass           //Animal
 
-	Animal a_h,a_h1;   //step #1 for creating object Creating Handler of class Animal
+  task make_dog();
+    Animal dog_h;
+    dog_h = new(.age(7), .name("Pup"));
+  endtask
+
+	Animal a_h;
 
 	initial begin
-		a_h = new();     // step #2 Now the handle points to the object
-		a_h.name = "Fluffy";
-		a_h.growOld(3);
-		a_h.print();
-		a_h1 = new();
-		a_h1.print();
+		make_dog();    
 	end
 
 endmodule

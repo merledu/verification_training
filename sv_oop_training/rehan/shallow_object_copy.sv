@@ -35,17 +35,16 @@ module top();
 			$display("Animal: '%s' age=%0d",name, age);        
 		endfunction
 
-	endclass           //Animal
+	endclass //Animal
 
-  task make_dog();
-    Animal dog_h;
-    dog_h = new(.age(7), .name("Pup"));
-  endtask
-
-	Animal a_h;
+	Animal a_h,
+         b_h;
 
 	initial begin
-		make_dog();    
+		a_h = new(.age(1), .name("gumpy"));
+    b_h = new a_h;
+    a_h.print();
+    b_h.print();
 	end
 
 endmodule

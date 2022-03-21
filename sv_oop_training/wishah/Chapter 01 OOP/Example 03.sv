@@ -42,6 +42,6 @@ Animal a_h; //handle to Animal Object
 
 initial begin 
 	a_h = new();
-	a_h.print();	//will print "Animal: 'Dog' age = 4 "
+	a_h.print();	//will print "Animal: 'Dog' age = 1 "
 end
 endmodule

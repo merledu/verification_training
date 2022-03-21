@@ -7,8 +7,8 @@
 // Additional contributions by:                                                                        //
 //                                                                                                     //
 // Create Date:    18-MARCH-2022                                                                       //
-// Design Name:    use of this                                                                         //
-// Module Name:    use_of_this.sv                                                                      //
+// Design Name:    shallow object copy                                                                 //
+// Module Name:    shallow_objecy_copy.sv                                                              //
 // Project Name:   SystemVerilog OOP Training                                                          //
 // Language:       SystemVerilog - OOP                                                                 //
 //                                                                                                     //

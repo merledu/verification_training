@@ -7,13 +7,13 @@
 // Additional contributions by:                                                                        //
 //                                                                                                     //
 // Create Date:    18-MARCH-2022                                                                       //
-// Design Name:    use of this                                                                         //
-// Module Name:    use_of_this.sv                                                                      //
+// Design Name:    deep copy                                                                           //
+// Module Name:    deep_copy.sv                                                                        //
 // Project Name:   SystemVerilog OOP Training                                                          //
 // Language:       SystemVerilog - OOP                                                                 //
 //                                                                                                     //
 // Description:                                                                                        //
-//  Shallow object copy is implemented and aggeregation is used it is analyzed that for aggregation    //
+//  deep object copy is implemented and aggeregation is used it is analyzed that for aggregation       //
 //  shallow copy is not okay                                                                           //
 //                                                                                                     //
 //                                                                                                     //

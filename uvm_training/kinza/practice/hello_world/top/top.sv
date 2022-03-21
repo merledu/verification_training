@@ -1,12 +1,21 @@
-/*-----------------------------------------------------------------
-File name     : run.f
-Developer     : Kinza Qamar Zaman
-Created       : 14-Mar-22
-Description   : Basic UVM hello_world example 
-Notes         : From the Mentor "SystemVerilog UVM" training
--------------------------------------------------------------------
-
------------------------------------------------------------------*/
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+// Company:        MICRO-ELECTRONICS RESEARCH LABORATORY                                             //
+//                                                                                                   //
+// Engineers:      Kinza Qamar Zaman - Verification                                                  //
+//                                                                                                   //
+// Additional contributions by:                                                                      //
+//                                                                                                   //
+// Create Date:    14-Mar-2022                                                                       //
+// Design Name:    top                                                                               //
+// Module Name:    top.sv                                                                            //
+// Project Name:   Top module to run hello_test                                                      //
+// Language:       SystemVerilog - UVM                                                               //
+//                                                                                                   //
+// Description:    This module start the execution of uvm_phases                                     //
+//                                                                                                   //
+// Revision Date:                                                                                    //
+//                                                                                                   //
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 module top ;
 import uvm_pkg::*;

@@ -13,7 +13,7 @@
 //                                                                                                     //
 // Description:                                                                                        //
 //     - This code helps to understand how to shallow copy when an object can refer to another object  //
-//       same objects.....                                                                             //
+//                                                                                                     //
 //                                                                                                     //
 // Revision Date:                                                                                      //
 //                                                                                                     //

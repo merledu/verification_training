@@ -29,18 +29,27 @@ module top();
       age = 0;
       name = "";
 		endfunction //new()
+
+    // Static Method
+    static function void printFarmer();
+      $display("The farmer for all animals is %s",farmer);
+    endfunction
+
 	endclass //Animal
-
-	Animal a_h, // handle for object 1
+  
+	
+  initial begin
+    $display("The farmer for all animals is %s", Animal::farmer);  // Displaying static property without object.
+    Animal::printFarmer(); // checking to print from static method
+  end
+  
+  Animal a_h, // handle for object 1
          b_h; // handle for second object
-
-  initial $display("The farmer for all animals is %s", Animal::farmer);  // Displaying static property without object.
-
 	initial begin
 		a_h = new();  // Creating object
     a_h.farmer = "Maria"; // Changing name of farmer for object a 
     b_h = new();          // creating new object     
-    $display("The farmer of object a is %s and farmer of object b is %s",a_h.farmer,b_h.farmer);
+    $display("The farmer of object a is %s and farmer of object b is %s",a_h.farmer,b_h.farmer); // Printing Farmer
 	end
 
 endmodule

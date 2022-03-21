@@ -37,10 +37,9 @@ module top();
   initial $display("The farmer for all animals is %s", Animal::farmer);  // Displaying static property without object.
 
 	initial begin
-		a_h = new();
-    a_h.farmer = "Maria";
-    b_h = new();
-    b_h = new();
+		a_h = new();  // Creating object
+    a_h.farmer = "Maria"; // Changing name of farmer for object a 
+    b_h = new();          // creating new object     
     $display("The farmer of object a is %s and farmer of object b is %s",a_h.farmer,b_h.farmer);
 	end
 

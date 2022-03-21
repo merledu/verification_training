@@ -2,7 +2,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 // Company: Micro Electronics Research Lab
 // Engineer: Rehan Ejaz
-// Create Date: 14.03.2022 11:18:36
+// Create Date: 18.03.2022
 // Design Name: OOP Animal Class Systemverilog
 // Module Name: top
 // Description: OOP based CLASS to understand basic Classes of system verilog and their properties
@@ -14,8 +14,8 @@
 module top();
 	class Animal;
 			// Properties (Variables)
-		int age    ;
 		string name;
+		int age    ;
 		// Constructor Method
 		function new();
 			age = 0  ;
@@ -31,17 +31,25 @@ module top();
 				#1s age++;
 		endtask
 
-	endclass           //Animal
+	endclass//Animal
 
-	Animal a_h,a_h1;   //step #1 for creating object Creating Handler of class Animal
+	Animal a_h,  // handle a declared
+	       b_h;  // handle b declared
 
 	initial begin
-		a_h = new();     // step #2 Now the handle points to the object
-		a_h.name = "Fluffy";
-		a_h.growOld(3);
-		a_h.print();
-		a_h1 = new();
-		a_h1.print();
+		a_h = new();  // Create new object and store handle in a_h
+		#10;
+		a_h = new();  // Create an object and overwrite previous handle thus previous object is garbage collected
+		#10;
+		a_h = null;   // handle cleaned up object finished
+		#10;
+		a_h = new();  // create new object
+		#10;
+		b_h = a_h;    // b_h pointing to the same object that was pointed by a_h
+		#10;   
+		a_h = new();  // a_h points to new object  but b_h is still pointing to the object
+		#10;
+		b_h = new();  // b_h points to new object leaving previous object garbage collected
 	end
 
 endmodule

@@ -2,7 +2,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 // Company: Micro Electronics Research Lab
 // Engineer: Rehan Ejaz
-// Create Date: 14.03.2022 11:18:36
+// Create Date: 18.03.2022
 // Design Name: OOP Animal Class Systemverilog
 // Module Name: top
 // Description: OOP based CLASS to understand basic Classes of system verilog and their properties
@@ -14,12 +14,13 @@
 module top();
 	class Animal;
 			// Properties (Variables)
-		int age    ;
 		string name;
+		int age    ;
 		// Constructor Method
-		function new();
-			age = 0  ;
-			name = "";
+		function new(string name,
+                 int    age);
+			this.age  = age;
+			this.name = name;
 		endfunction //new()
 		// More methods
 		function void print();
@@ -31,17 +32,24 @@ module top();
 				#1s age++;
 		endtask
 
-	endclass           //Animal
+	endclass //Animal
 
-	Animal a_h,a_h1;   //step #1 for creating object Creating Handler of class Animal
+	Animal farm_h[4];  //array of handles created 
 
 	initial begin
-		a_h = new();     // step #2 Now the handle points to the object
-		a_h.name = "Fluffy";
-		a_h.growOld(3);
-		a_h.print();
-		a_h1 = new();
-		a_h1.print();
+    
+    foreach (farm_h[i]) begin // objects are created and different handles are pointed to them
+        farm_h[i] = new($sformatf("Cow%0d",i), i);
+    end
+
+    foreach (farm_h[i]) begin // handle and object properties are printed
+      $display("farm_h[%0d]=%p",i,farm_h[i]);
+    end
+
+    foreach (farm_h[i]) begin // each handle is pointing to object Cow1 and the remainig objects are garbage collected
+      farm_h[i] = farm_h[0];
+    end
+
 	end
 
 endmodule

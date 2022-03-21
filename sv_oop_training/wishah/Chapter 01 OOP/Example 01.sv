@@ -22,26 +22,26 @@
 module top();  
 	class Animal;  //class declaration
 
-    //property => contains information about objet
-    int age;
-    string name;
+    	//property => contains information about objet
+    		int age;
+    		string name;
 
-    //constructor method
-    function new();
-      age = 0;
-      name = "";
-    endfunction
+    	//constructor method
+    	function new();
+      	age = 0;
+      	name = "";
+    	endfunction
 
-    //more methods 
-    function void print();
-    $display("Animal : '%s' age = %a0d", name, age);
-    endfunction
+    	//more methods 
+    	function void print();
+    		$display("Animal : '%s' age = %a0d", name, age);
+    	endfunction
     
-    task growold (int how_long);
-      repeat (how_long);
-      #1s age++;
-    endtask
-  endclass : Animal
+    	task growold (int how_long);
+      		repeat (how_long);
+      		#1s age++;
+   	 	endtask
+		endclass : Animal
 
 Animal a_h; //handle to Animal Object
 

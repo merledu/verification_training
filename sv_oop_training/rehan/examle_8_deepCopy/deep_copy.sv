@@ -20,6 +20,7 @@
 // Revision Date:                                                                                      //
 //                                                                                                     //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 module top();
   
   class Mouth;
@@ -65,9 +66,9 @@ module top();
          c_h; // handle for second object
 
 	initial begin
-		a_h = new(.age(1), .teeth(3)); // creating new object
-		b_h = new(.age(22), .teeth(28)); // creating new object
-    c_h = new(.age(0), .teeth(0));
+		a_h = new(.age(1) ,.teeth(3)); // creating new object
+		b_h = new(.age(22),.teeth(28)); // creating new object
+    c_h = new(.age(0) ,.teeth(0));
     a_h.print();
     b_h.print();
     c_h.print();

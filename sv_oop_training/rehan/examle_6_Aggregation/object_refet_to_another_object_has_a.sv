@@ -1,16 +1,26 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: Micro Electronics Research Lab
-// Engineer: Rehan Ejaz
-// Create Date: 18.03.2022
-// Design Name: OOP Animal Class Systemverilog
-// Module Name: top
-// Description: OOP based CLASS to understand basic Classes of system verilog and their properties
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Company:        MICRO-ELECTRONICS RESEARCH LABORATORY                                               //
+//                                                                                                     //
+// Engineers:      Rehan Ejaz - Verification                                                           //
+//                                                                                                     //
+// Additional contributions by:                                                                        //
+//                                                                                                     //
+// Create Date: 14.03.2022 11:18:36                                                                    //
+// Design Name: OOP Animal Class Systemverilog                                                         //
+// Module Name: top                                                                                    //
+// Project Name:   SystemVerilog OOP Training                                                          //
+// Language:       SystemVerilog - OOP                                                                 //
+//                                                                                                     //
+// Description:                                                                                        //
+//  OOP based CLASS to understand basic Classes of system verilog and their properties                 //
+//  shallow copy is not okay                                                                           //
+//                                                                                                     //
+//                                                                                                     //
+// Revision Date:                                                                                      //
+//                                                                                                     //
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 module top();
 	
   class Mouth;

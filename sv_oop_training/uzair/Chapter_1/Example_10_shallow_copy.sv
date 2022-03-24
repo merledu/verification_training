@@ -1,3 +1,23 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Company:        MICRO-ELECTRONICS RESEARCH LABORATORY                                               //
+//                                                                                                     //
+// Engineers:      M.Uzair Qureshi								                                                     //
+//                                                                                                     //
+// Additional contributions by:                                                                        //
+//                                                                                                     //
+// Create Date:    08-MARCH-2022                                                                       //
+// Design Name:    SV OOP Implementation                                                               //
+// Module Name:    Example_10_shallow_copy.sv                                                          //
+// Project Name:   SV OOP Training				                                                             //
+// Language:       SystemVerilog			                                                                 //
+//                                                                                                     //
+// Description:                                                                                        //
+//     -This code helps to understand about shallow copy or half copy.                   			         //
+//       				                                                                                       //
+//                                                                                                     //
+// Revision Date:                                                                                      //
+//                                                                                                     //
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
 module top();  
   class Mouth;
     int teeth;

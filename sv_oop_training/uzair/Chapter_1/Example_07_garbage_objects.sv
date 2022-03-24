@@ -1,3 +1,23 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Company:        MICRO-ELECTRONICS RESEARCH LABORATORY                                               //
+//                                                                                                     //
+// Engineers:      M.Uzair Qureshi								                                                     //
+//                                                                                                     //
+// Additional contributions by:                                                                        //
+//                                                                                                     //
+// Create Date:    08-MARCH-2022                                                                       //
+// Design Name:    SV OOP Implementation                                                               //
+// Module Name:    Example_07_garbage_objects.sv                                                       //
+// Project Name:   SV OOP Training				                                                             //
+// Language:       SystemVerilog			                                                                 //
+//                                                                                                     //
+// Description:                                                                                        //
+//     -This code helps to understand that what happens when no handle is pointed to any object. 			 //
+//       				                                                                                       //
+//                                                                                                     //
+// Revision Date:                                                                                      //
+//                                                                                                     //
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
 module top();
   class Animal;
     int age;

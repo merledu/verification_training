@@ -1,3 +1,23 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Company:        MICRO-ELECTRONICS RESEARCH LABORATORY                                               //
+//                                                                                                     //
+// Engineers:      M.Uzair Qureshi								                                                     //
+//                                                                                                     //
+// Additional contributions by:                                                                        //
+//                                                                                                     //
+// Create Date:    08-MARCH-2022                                                                       //
+// Design Name:    SV OOP Implementation                                                               //
+// Module Name:    Example_13_clone_2.sv                                                               //
+// Project Name:   SV OOP Training				                                                             //
+// Language:       SystemVerilog			                                                                 //
+//                                                                                                     //
+// Description:                                                                                        //
+//     -This code helps to understand about how aggregated class can also be cloned.                   //
+//       				                                                                                       //
+//                                                                                                     //
+// Revision Date:                                                                                      //
+//                                                                                                     //
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
 module top(); 
   class Mouth;
     int teeth;

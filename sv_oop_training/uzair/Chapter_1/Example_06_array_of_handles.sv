@@ -1,3 +1,23 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Company:        MICRO-ELECTRONICS RESEARCH LABORATORY                                               //
+//                                                                                                     //
+// Engineers:      M.Uzair Qureshi								                                                     //
+//                                                                                                     //
+// Additional contributions by:                                                                        //
+//                                                                                                     //
+// Create Date:    08-MARCH-2022                                                                       //
+// Design Name:    SV OOP Implementation                                                               //
+// Module Name:    Example_06_array_of_handles.sv                                                      //
+// Project Name:   SV OOP Training				                                                             //
+// Language:       SystemVerilog			                                                                 //
+//                                                                                                     //
+// Description:                                                                                        //
+//     -This code helps to understand about how to make array of handles.                       			 //
+//       				                                                                                       //
+//                                                                                                     //
+// Revision Date:                                                                                      //
+//                                                                                                     //
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
 module top();
   class Animal;
     int age;

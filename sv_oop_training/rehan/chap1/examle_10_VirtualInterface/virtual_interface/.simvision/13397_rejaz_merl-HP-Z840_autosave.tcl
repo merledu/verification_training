@@ -47,4 +47,4 @@ alias quit exit
 database -open -shm -into waves.shm waves -default
 probe -create -database waves top.d0.a top.d0.b top.d0.c
 
-simvision -input /home/rejaz/Desktop/verification_training/sv_oop_training/rehan/examle_10_VirtualInterface/virtual_interface/.simvision/13397_rejaz_merl-HP-Z840_autosave.tcl.svcf
+simvision -input /home/rejaz/Desktop/verification_training/sv_oop_training/rehan/chap1/examle_10_VirtualInterface/virtual_interface/.simvision/13397_rejaz_merl-HP-Z840_autosave.tcl.svcf

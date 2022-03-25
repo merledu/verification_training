@@ -1,0 +1,68 @@
+xrun(64): 20.09-s010: (c) Copyright 1995-2021 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	20.09-s010: Started on Mar 22, 2022 at 12:21:21 PKT
+xrun
+	-f flist.f
+		driver.svh
+		dut.sv
+		test.sv
+		top.sv
+		interface.sv
+		-access +rwc
+	-gui
+Recompiling... reason: file './test.sv' is newer than expected.
+	expected: Tue Mar 22 12:16:29 2022
+	actual:   Tue Mar 22 12:21:01 2022
+file: test.sv
+	module worklib.test:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+dut d0(.a_i(intf_tb.opA_i),
+     |
+xmelab: *W,CUVWSP (./top.sv,7|5): 1 output port was not connected:
+xmelab: (./dut.sv,4): cmp
+
+	Top level design units:
+		$unit_0x4c648467
+		top
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.test:sv <0x02bd0414>
+			streams:  11, words:  6673
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                    Instances  Unique
+		Modules:                    3       3
+		Interfaces:                 1       1
+		Registers:                 18      20
+		Scalar wires:               1       -
+		Vectored wires:             2       -
+		Initial blocks:             1       1
+		Cont. assignments:          1       1
+		Pseudo assignments:         2       2
+		Compilation units:          1       1
+		SV Class declarations:      2       2
+		SV Class specializations:   2       2
+	Writing initial simulation snapshot: worklib.top:sv
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> source /opt/cadence/installs/XCELIUM2009/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm top.d0.a_i top.d0.b_i top.d0.cmp top.intf_tb.opA_i top.intf_tb.opB_i
+Created probe 1
+xcelium> run 10
+Ran until 10 NS + 0
+xcelium> run
+xmsim: *W,RNQUIE: Simulation is complete.
+xcelium> reset
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+Loaded snapshot worklib.top:sv
+xcelium> run
+xmsim: *W,RNQUIE: Simulation is complete.
+xcelium> 

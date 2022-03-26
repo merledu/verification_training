@@ -6,7 +6,7 @@ class Transaction;
 	endfunction
 
 	function void print();
-		$$display("Tr: src=%h, dst=%h, csm=%h, data=%p", src, dst, csm, data);
+		$display("Tr: src=%h, dst=%h, csm=%h, data=%p", src, dst, csm, data);
 	endfunction
 
 	function void copy(Transaction rhs_h);

@@ -22,4 +22,3 @@ class Transaction;
 	endfunction
 	
 endclass
-		

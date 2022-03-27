@@ -12,13 +12,13 @@ class BadTr extends Transaction;
     super.print();
   endfunction
 
-  function void copy(Transaction rhs_h);
+	function void copy(BadTr rhs_h);
     badCsm = rhs_h.badCsm;
   endfunction
 
-  function void clone();
+  function Transaction clone();
     BadTr b_h;
-    b_h.new();
+    b_h = new();
     clone = b_h;
     clone.copy(this);
   endfunction

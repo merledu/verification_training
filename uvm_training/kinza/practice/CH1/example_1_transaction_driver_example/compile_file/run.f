@@ -28,7 +28,7 @@ top.sv            // compile top level module
 //-access +rwc -gui
 
 //TEST_NAME
-+UVM_TESTNAME=tx_test 
+//+UVM_TESTNAME=tx_test 
 
 //Seed randomization
 -svseed random

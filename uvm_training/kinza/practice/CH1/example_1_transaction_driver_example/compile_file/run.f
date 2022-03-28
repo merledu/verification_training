@@ -6,29 +6,29 @@
 // Additional contributions by:                                                                        //
 //                                                                                                     //
 // Create Date:    14-MARCH-2022                                                                       //
-// Design Name:    top                                                                                 //
-// Module Name:    top.sv                                                                              //
-// Project Name:                                                                                       //
-// Language:       SystemVerilog - OOP                                                                 //
+// Design Name:    Random transaction item                                                             //
+// Module Name:    run.f                                                                               //
+// Project Name:   Random sequence item example                                                        //
+// Language:       SystemVerilog - UVM                                                                 //
 //                                                                                                     //
 // Description:                                                                                        //
-//     - This top module is used to construct the class                                                //
-//       .....                                                                                         //
-//                                                                                                     //
+//         -  This file contain names of the files to be compiled, elaborate and simulate.             //
 // Revision Date:                                                                                      //
 //                                                                                                     //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-module top;
-`include "animal.sv"
+-64
 
-initial begin
-	animal a_h ; //Animal handle, pointer to animal object
-	a_h = new(); //Allocates memory and makes animal object
-	a_h.print();
-	a_h.growOld(3);
-	a_h.name = "ABC";
-	a_h.print();
-end
+-uvmhome $UVMHOME
 
-endmodule
+// compile files
+top.sv            // compile top level module
+
+//For simulating on Xcelium SimVision GUI mode, uncomment the below line
+//-access +rwc -gui
+
+//TEST_NAME
+//+UVM_TESTNAME=tx_test 
+
+//Seed randomization
+-svseed random

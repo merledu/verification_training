@@ -6,38 +6,25 @@
 // Additional contributions by:                                                                        //
 //                                                                                                     //
 // Create Date:    14-MARCH-2022                                                                       //
-// Design Name:    animal class                                                                        //
-// Module Name:    animal.sv                                                                           //
-// Project Name:                                                                                       //
-// Language:       SystemVerilog - OOP                                                                 //
+// Design Name:    hello_test                                                                          //
+// Module Name:    run.f                                                                               //
+// Project Name:   Basic hello_world UVM based Example                                                 //
+// Language:       SystemVerilog - UVM                                                                 //
 //                                                                                                     //
 // Description:                                                                                        //
-//     - Basic animal class to demonstrate SystemVerilog OOP basics.                                   //
-//       .....                                                                                         //
-//                                                                                                     //
+//         -  This file contain names of the files to be compiled, elaborate and simulate.             //
 // Revision Date:                                                                                      //
 //                                                                                                     //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-class animal;
-  int age;
-  string name;
+-64
 
-//Class constructor
-function new();
-  age = 0;
-	name = "";
-endfunction 
+-uvmhome $UVMHOME
 
-//Method to display properties of the animal
-function void print();
-	$display("Animal name : %s and age : %0d",name,age);
-endfunction
++UVM_TESTNAME=hello_world
+// compile files
 
-//Method to get the age
-task growOld (int how_long);
-	repeat(how_long)
-	#1 age++;
-endtask
+top.sv            // compile top level module
 
-endclass
+//For simulating on Xcelium SimVision GUI mode, uncomment the below line
+//-access +rwc -gui

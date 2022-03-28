@@ -6,22 +6,22 @@
 // Additional contributions by:                                                                      //
 //                                                                                                   //
 // Create Date:    14-Mar-2022                                                                       //
-// Design Name:    run.f                                                                             //
-// Module Name:                                                                                      //
-// Project Name:   A single file for compilation                                                     //
-// Language:                                                                                         //
+// Design Name:    hello_test                                                                        //
+// Module Name:    top.sv                                                                            //
+// Project Name:   Top module to run hello_test                                                      //
+// Language:       SystemVerilog - UVM                                                               //
 //                                                                                                   //
 // Description:                                                                                      //
-//                                                                                                   //
+//             Top module is responsible to run hello_test. We pass hello_test as a UVM_TESTNAME on  //
+// 			   the commmand line. run_test() gets the name of the test and execute uvm_phases.		 //
 // Revision Date:                                                                                    //
 //                                                                                                   //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
--64
 
--uvmhome $UVMHOME
-
-+UVM_TESTNAME=hello_world
-// compile files
-
-hello_world.sv // compile hello_world package
-top.sv            // compile top level module
+module top ;
+	import uvm_pkg::*;
+	import hello_pkg::*;
+	initial begin
+		run_test(); // run_test Start execution of uvm phases
+	end 
+endmodule 

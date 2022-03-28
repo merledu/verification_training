@@ -10,14 +10,14 @@ class Generator;
       tr_h = blueprint_h.clone();
       tr_h.src = i;
       tr_h.calcCsm();
-      drive(tr_h);
+      // drive(tr_h);
       $display("transaction:%0d derived",i);
       $display("Object:%0d Data =%p",i,tr_h);
     end
   endtask
 
-  task drive(Transaction trans_h);
-  
-  endtask
+  // task drive(Transaction trans_h);
+  // ...
+  // endtask
 
 endclass

@@ -12,8 +12,11 @@ class BadTr extends Transaction;
     super.print();
   endfunction
 
-	function void copy(BadTr rhs_h);
-    badCsm = rhs_h.badCsm;
+	function void copy(Transaction rhs_h);
+    BadTr b_h;
+    if($cast(b_h, rhs_h)); $fatal();
+    super.copy(rhs_h);
+    badCsm = b_h.badCsm;
   endfunction
 
   function Transaction clone();

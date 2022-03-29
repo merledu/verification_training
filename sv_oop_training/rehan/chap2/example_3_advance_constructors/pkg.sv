@@ -4,8 +4,8 @@ package pkg;
   typedef class Generator;
   typedef class BaseTest;
   typedef class BadTest;
-
-
+  
+  
   `include "Transaction.svh"
   `include "BadTr.svh"
   `include "Generator.svh"

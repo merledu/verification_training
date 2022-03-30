@@ -13,7 +13,6 @@
 //                                                                                                     //
 // Description:                                                                                        //
 //          tx_driver is a specialized class that carries tx_item.                                     //
-//         items.                                                                                      //
 // Revision Date:                                                                                      //
 //                                                                                                     //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -23,7 +22,7 @@ class tx_driver extends uvm_driver #(tx_item); //Specialized class with tx_item
 	`uvm_component_utils(tx_driver)
 	/*constructor has 2 arguments: 
 	  1) name of the object
-    2) handle to the parent */
+      2) handle to the parent */
 	function new(string name,uvm_component parent);
 		super.new(name,parent);
 	endfunction

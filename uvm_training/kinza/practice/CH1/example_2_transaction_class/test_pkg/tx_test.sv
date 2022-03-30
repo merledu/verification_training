@@ -7,7 +7,7 @@
 //                                                                                                   //
 // Create Date:    14-Mar-2022                                                                       //
 // Design Name:    hello_pkg                                                                         //
-// Module Name:    hello_pkg.sv                                                                      //
+// Module Name:    tx_test.sv                                                                        //
 // Project Name:   Basic UVM example of hello world                                                  //
 // Language:       SystemVerilog - UVM                                                               //
 //                                                                                                   //

@@ -7,7 +7,7 @@
 //                                                                                                     //
 // Create Date:    14-MARCH-2022                                                                       //
 // Design Name:    Random transaction item                                                             //
-// Module Name:    tx_driver.sv                                                                          //
+// Module Name:    tx_driver.sv                                                                        //
 // Project Name:   Random sequence item example                                                        //
 // Language:       SystemVerilog - UVM                                                                 //
 //                                                                                                     //

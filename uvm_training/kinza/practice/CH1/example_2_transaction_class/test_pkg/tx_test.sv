@@ -6,9 +6,9 @@
 // Additional contributions by:                                                                      //
 //                                                                                                   //
 // Create Date:    14-Mar-2022                                                                       //
-// Design Name:    hello_pkg                                                                         //
+// Design Name:    Random transaction item                                                           //
 // Module Name:    tx_test.sv                                                                        //
-// Project Name:   Basic UVM example of hello world                                                  //
+// Project Name:   Random sequence item example                                                      //
 // Language:       SystemVerilog - UVM                                                               //
 //                                                                                                   //
 // Description:                                                                                      //
@@ -31,16 +31,20 @@ class tx_test extends uvm_test;
     virtual function void build_phase(uvm_phase phase);
         env = tx_env::type_id::create("env",this); //creating env object
     endfunction
-    //Connect phase not required as we have no other component except of an agent class, exist inside the environment hierarchy
+
+    /*Connect phase not required as we have no other component except of an agent class, exist inside 
+    the environment hierarchy */
     virtual task run_phase (uvm_phase phase);
         tx_sequence seq;
         seq = tx_sequence::type_id::create("seq");
         phase.raise_objection(this,"Start tx_sequence"); //raise objection then
-        seq.start(env.agt.sqr); //start the item in seqr and blocks until the sequence body completes
-        phase.drop_objection(this,"End tx_sequence"); // then drop the objection telling UVM it is done eith the transaction
+        seq.start(env.agt.sqr);                         //start the item in seqr and blocks until the sequence body completes
+        phase.drop_objection(this,"End tx_sequence");   // then drop the objection telling UVM it is done eith the transaction
     endtask
+
     //Print topology report
     function void end_of_elaboration_phase(uvm_phase phase);
         uvm_top.print_topology();
     endfunction : end_of_elaboration_phase
+
 endclass

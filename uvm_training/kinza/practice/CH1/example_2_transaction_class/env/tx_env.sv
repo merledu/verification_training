@@ -32,5 +32,8 @@ class tx_env extends uvm_env;
 	virtual function void build_phase(uvm_phase phase);
 		agt = tx_agent::type_id::create("agt",this);
 	endfunction
-//Connect phase not required as we have no other component except of an agent class, exist inside the environment hierarchy
+
+/* Connect phase not required as we have no other component except of an agent class, 
+	exist inside the environment hierarchy */
+	
 endclass

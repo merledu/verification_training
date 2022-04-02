@@ -5,10 +5,10 @@
 //                                                                                                     //
 // Additional contributions by:                                                                        //
 //                                                                                                     //
-// Create Date:    14-MARCH-2022                                                                       //
-// Design Name:    Random transaction item                                                             //
+// Create Date:    17-MARCH-2022                                                                       //
+// Design Name:    Random sequence class                                                               //
 // Module Name:    tx_env.sv                                                                           //
-// Project Name:   Random sequence item example                                                        //
+// Project Name:   Randomize sequence class.                                                           //
 // Language:       SystemVerilog - UVM                                                                 //
 //                                                                                                     //
 // Description:                                                                                        //
@@ -27,13 +27,9 @@ class tx_env extends uvm_env;
 	endfunction 
 
 	tx_agent agt;
-
 	//building the components inside the hierarchy of environment class
 	virtual function void build_phase(uvm_phase phase);
 		agt = tx_agent::type_id::create("agt",this);
 	endfunction
-
-/* Connect phase not required as we have no other component except of an agent class, 
-	exist inside the environment hierarchy */
-	
+//Connect phase not required as we have no other component except of an agent class, exist inside the environment hierarchy
 endclass

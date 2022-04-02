@@ -25,8 +25,9 @@ module top;
 	`include "tx_item.sv"
 	`include "tx_sequence.sv"
 	`include "tx_driver.sv"
-	/*initial begin
+   
+   	initial begin
 		run_test(); // run_test Start execution of uvm phases
-	end */
+	end 
 endmodule 
 

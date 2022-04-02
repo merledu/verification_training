@@ -5,35 +5,38 @@
 //                                                                                                     //
 // Additional contributions by:                                                                        //
 //                                                                                                     //
-// Create Date:    14-MARCH-2022                                                                       //
-// Design Name:    Random transaction item                                                             //
-// Module Name:    tx_env.sv                                                                           //
-// Project Name:   Random sequence item example                                                        //
+// Create Date:    17-MARCH-2022                                                                       //
+// Design Name:    Random sequence class                                                               //
+// Module Name:    tx_driver.sv                                                                        //
+// Project Name:   Randomize sequence class.                                                           //
 // Language:       SystemVerilog - UVM                                                                 //
 //                                                                                                     //
 // Description:                                                                                        //
-//          tx_env instantiate the agent in the build phase.                                           //
-//                                                                                                     //
+//          tx_driver is a specialized class that carries tx items.                                    //
 // Revision Date:                                                                                      //
 //                                                                                                     //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-class tx_env extends uvm_env;
-	//Factory registration
-	`uvm_component_utils(tx_env)
-	//constructor
+class tx_driver extends uvm_driver #(tx_item);
+
+	//Factory Registration
+	`uvm_component_utils(tx_driver)
+    /*constructor has 2 arguments: 
+	  1) name of the object
+      2) handle to the parent */
 	function new(string name,uvm_component parent);
 		super.new(name,parent);
-	endfunction 
-
-	tx_agent agt;
-
-	//building the components inside the hierarchy of environment class
-	virtual function void build_phase(uvm_phase phase);
-		agt = tx_agent::type_id::create("agt",this);
 	endfunction
-
-/* Connect phase not required as we have no other component except of an agent class, 
-	exist inside the environment hierarchy */
-	
+	virtual task run_phase(uvm_phase phase);
+		tx_item tx;
+		forever begin
+			seq_item_port.get_next_item(tx);//driver gets the tx_item through the blocking TLM port
+			transfer(tx); //Call transfer function
+			seq_item_port.item_done();	
+		end
+	endtask
+	virtual task transfer(tx_item tr);
+		`uvm_info("TRANSFER",$sformatf("tr.dst=%3d",tr.dst),UVM_LOW);
+		`uvm_info("TRANSFER",$sformatf("tr.src=%3d",tr.src),UVM_LOW);
+	endtask
 endclass

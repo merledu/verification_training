@@ -5,35 +5,39 @@
 //                                                                                                     //
 // Additional contributions by:                                                                        //
 //                                                                                                     //
-// Create Date:    14-MARCH-2022                                                                       //
-// Design Name:    Random transaction item                                                             //
-// Module Name:    tx_env.sv                                                                           //
-// Project Name:   Random sequence item example                                                        //
+// Create Date:    17-MARCH-2022                                                                       //
+// Design Name:    Random sequence class                                                               //
+// Module Name:    rand_seq_size.sv                                                                    //
+// Project Name:   Randomize sequence class.                                                           //
 // Language:       SystemVerilog - UVM                                                                 //
 //                                                                                                     //
 // Description:                                                                                        //
-//          tx_env instantiate the agent in the build phase.                                           //
-//                                                                                                     //
+//          rand_size_seq randomizes the sequence.                                                     //
 // Revision Date:                                                                                      //
 //                                                                                                     //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-class tx_env extends uvm_env;
-	//Factory registration
-	`uvm_component_utils(tx_env)
-	//constructor
-	function new(string name,uvm_component parent);
-		super.new(name,parent);
+class rand_size_seq extends uvm_sequence #(tx_item);
+
+	`uvm_object_utils(rand_size_seq)
+
+	function new(string name="rand_size_seq");
+		super.new(name);
+		if (!(this.randomize))
+		`uvm_fatal("Failed","Randomization Failed");
 	endfunction 
 
-	tx_agent agt;
+	rand bit [31:0] block_size;
+	constraint size {soft block_size inside {32,255};}
 
-	//building the components inside the hierarchy of environment class
-	virtual function void build_phase(uvm_phase phase);
-		agt = tx_agent::type_id::create("agt",this);
-	endfunction
-
-/* Connect phase not required as we have no other component except of an agent class, 
-	exist inside the environment hierarchy */
-	
+	virtual task body();
+		tx_item tx;
+		repeat(block_size) begin //generate transactions for block size times
+		tx = tx_item::type_id::create("tx"); //Body task creates transaction using factory creation
+		start_item(tx);		       //Wait for driver to be ready
+		if (!tx.randomize())		       // Randomize transaction
+			`uvm_fatal("Fatal","Randomization Failed")
+		finish_item(tx);		      //Sends transaction and waits for response from driver to know when it is ready again to generate 							and send transactions again
+		end
+	endtask
 endclass

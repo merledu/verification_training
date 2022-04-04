@@ -21,7 +21,7 @@ class tx_driver extends uvm_driver #(tx_item);
 
 	//Factory Registration
 	`uvm_component_utils(tx_driver)
-	
+
     /*constructor has 2 arguments: 
 	  1) name of the object
       2) handle to the parent */
@@ -33,7 +33,7 @@ class tx_driver extends uvm_driver #(tx_item);
 		tx_item tx;
 		forever begin
 			seq_item_port.get_next_item(tx);//driver gets the tx_item through the blocking TLM port
-			transfer(tx); //Call transfer function
+			transfer(tx); 				   //Call transfer function
 			seq_item_port.item_done();	
 		end
 	endtask

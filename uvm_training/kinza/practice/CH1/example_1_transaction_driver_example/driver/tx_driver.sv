@@ -7,7 +7,7 @@
 //                                                                                                     //
 // Create Date:    14-MARCH-2022                                                                       //
 // Design Name:    Random transaction item                                                             //
-// Module Name:    tx_driver.sv                                                                          //
+// Module Name:    tx_driver.sv                                                                        //
 // Project Name:   Random sequence item example                                                        //
 // Language:       SystemVerilog - UVM                                                                 //
 //                                                                                                     //
@@ -23,10 +23,11 @@ class tx_driver extends uvm_driver #(tx_item); //Specialized class with tx_item
 	`uvm_component_utils(tx_driver)
 	/*constructor has 2 arguments: 
 	  1) name of the object
-    2) handle to the parent */
+      2) handle to the parent */
 	function new(string name,uvm_component parent);
 		super.new(name,parent);
 	endfunction
+
 	virtual task run_phase(uvm_phase phase);
 		tx_item tx;
 		forever begin
@@ -35,7 +36,9 @@ class tx_driver extends uvm_driver #(tx_item); //Specialized class with tx_item
 			seq_item_port.item_done();	
 		end
 	endtask
+
 	virtual task transfer(tx_item tr);
 		`uvm_info("TRANSFER",$sformatf("tr.data=%3d",tr.data),UVM_LOW);
 	endtask
+	
 endclass

@@ -28,7 +28,8 @@ class tx_dst_fixed extends tx_item;
     constraint c_dst_fixed {soft dst == fixed_dst;}
 
     //Virtual Copy method 
-    //Copies the object pointing to source handle into the object pointing to destination handle ---> (dst.copy(src))
+    /*Copies the object pointing to source handle into the object pointing to destination 
+			handle ---> (dst.copy(src)) */
     //There are 3 steps to do this
 
     //1: Create the do_copy method
@@ -36,13 +37,15 @@ class tx_dst_fixed extends tx_item;
 
     //2nd: Declare new handle and cast the argument to this handle
 
-    //As tx_item properties are not visible from just the uvm_object handle, declare new handle that points to tx_item object
+    /*As tx_item properties are not visible from just the uvm_object handle, declare new handle that points 
+			to tx_item object*/
         tx_dst_fixed tx_rhs;
     // cast the argument rhs to tx_rhs
         if (!$cast(tx_rhs,rhs)) //At run time SV checks the object type of both the handles through $cast
             `uvm_fatal(get_type_name(),"Illegal rhs arguments:"); 
 
-        super.do_copy(rhs); //There may be properties in uvm_seq_item class that need to be copied so call super.docopy() passing in the rhs handle
+        super.do_copy(rhs);    /*There may be properties in uvm_seq_item class that need to be copied so call
+																 super.docopy() passing in the rhs handle. */
 
     //3rd(a): Copy object properties
         fixed_dst = tx_rhs.fixed_dst;
@@ -50,13 +53,15 @@ class tx_dst_fixed extends tx_item;
     //3(b) Above method is shallow. Deep copy any contained objects. 
     //In this example, we do not have any aggregated class so we skip the 3b step
     endfunction
+
     //Virtual compare method
     //Compare method returns match ---> if(actual.compare(expect))
     //There are 3 steps to do this
     virtual function bit do_compare(uvm_object rhs, uvm_comparer comparer);
 
     //1st: cast uvm_object handle into tx_item handle so you can access tx_item properties
-    //As tx_item properties are not visible from just the uvm_object handle, declare new handle that points to tx_item object
+    /*As tx_item properties are not visible from just the uvm_object handle, declare new handle that points
+			to tx_item object. */
         tx_dst_fixed tx_rhs;
     // cast the argument rhs to tx_rhs
         if (!$cast(tx_rhs,rhs)) //At run time SV checks the object type of both the handles through $cast
@@ -72,9 +77,11 @@ class tx_dst_fixed extends tx_item;
     //3rd(b)deep compare other contained objects
     //In this example, we do not have any aggregated class so we skip the 3b step 
     endfunction
+
     virtual function string convert2string();
         string s = super.convert2string(); //Get the string with base object properties
         $sformat(s, ":%s\ntx_dst_fixed values are : \n",s); 
         $sformat(s, ":%s fixed_dst=%0x\n" ,s,fixed_dst); 
     endfunction
+
 endclass

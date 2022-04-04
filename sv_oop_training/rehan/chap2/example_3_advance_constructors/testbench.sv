@@ -1,3 +1,23 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Company:        MICRO-ELECTRONICS RESEARCH LABORATORY                                               //
+//                                                                                                     //
+// Engineers:      Rehan Ejaz - Verification                                                           //
+//                                                                                                     //
+// Additional contributions by:                                                                        //
+//                                                                                                     //
+// Create Date: 20.03.2022                                                                             //
+// Design Name: Testbench                                                                              //
+// Module Name:  testbench                                                                             //
+// Project Name:   SystemVerilog OOP Training                                                          //
+// Language:       SystemVerilog - OOP                                                                 //
+//                                                                                                     //
+// Description:                                                                                        //
+//  testbench file to declare all handles and initiate the testbench                                   //
+//                                                                                                     //
+//                                                                                                     //                                                                                                     //
+// Revision Date:                                                                                      //
+//                                                                                                     //
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
 module testbench();
 import pkg::*;
 

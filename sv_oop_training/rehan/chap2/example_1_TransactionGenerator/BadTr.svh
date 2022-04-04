@@ -1,3 +1,23 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Company:        MICRO-ELECTRONICS RESEARCH LABORATORY                                               //
+//                                                                                                     //
+// Engineers:      Rehan Ejaz - Verification                                                           //
+//                                                                                                     //
+// Additional contributions by:                                                                        //
+//                                                                                                     //
+// Create Date: 20.03.2022                                                                             //
+// Design Name: Bad transaction class                                                                  //
+// Module Name:                                                                                        //
+// Project Name:   SystemVerilog OOP Training                                                          //
+// Language:       SystemVerilog - OOP                                                                 //
+//                                                                                                     //
+// Description:                                                                                        //
+//  Bad transaction class that extends the transaction class and corrupts the checksum                 //
+//                                                                                                     //
+//                                                                                                     //                                                                                                     //
+// Revision Date:                                                                                      //
+//                                                                                                     //
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
 class BadTr extends Transaction;
   bit badCsm; // Corrupt the CSM 
   // override existing Methods

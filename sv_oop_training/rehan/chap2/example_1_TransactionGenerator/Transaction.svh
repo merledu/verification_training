@@ -1,3 +1,23 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Company:        MICRO-ELECTRONICS RESEARCH LABORATORY                                               //
+//                                                                                                     //
+// Engineers:      Rehan Ejaz - Verification                                                           //
+//                                                                                                     //
+// Additional contributions by:                                                                        //
+//                                                                                                     //
+// Create Date: 20.03.2022                                                                             //
+// Design Name: Transaction Class                                                                      //
+// Module Name:                                                                                        //
+// Project Name:   SystemVerilog OOP Training                                                          //
+// Language:       SystemVerilog - OOP                                                                 //
+//                                                                                                     //
+// Description:                                                                                        //
+//  Trancaction class to generate transaction with a simple method of checksum                         //
+//                                                                                                     //
+//                                                                                                     //                                                                                                     //
+// Revision Date:                                                                                      //
+//                                                                                                     //
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
 class Transaction;
 	bit [31:0] src, dst, csm, data[8]; // Properties
 	

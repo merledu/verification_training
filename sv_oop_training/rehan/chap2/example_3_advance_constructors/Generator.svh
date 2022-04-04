@@ -1,3 +1,23 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Company:        MICRO-ELECTRONICS RESEARCH LABORATORY                                               //
+//                                                                                                     //
+// Engineers:      Rehan Ejaz - Verification                                                           //
+//                                                                                                     //
+// Additional contributions by:                                                                        //
+//                                                                                                     //
+// Create Date: 20.03.2022                                                                             //
+// Design Name: Generator class                                                                        //
+// Module Name:                                                                                        //
+// Project Name:   SystemVerilog OOP Training                                                          //
+// Language:       SystemVerilog - OOP                                                                 //
+//                                                                                                     //
+// Description:                                                                                        //
+//  Generator class to create multiple transactions through clone method                               //
+//                                                                                                     //
+//                                                                                                     //                                                                                                     //
+// Revision Date:                                                                                      //
+//                                                                                                     //
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
 class Generator;
   Transaction blueprint_h, tr_h;
 

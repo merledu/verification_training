@@ -5,35 +5,29 @@
 //                                                                                                     //
 // Additional contributions by:                                                                        //
 //                                                                                                     //
-// Create Date: 20.03.2022                                                                             //
-// Design Name: test body                                                                              //
-// Module Name: test                                                                                   //
+// Create Date: 4.04.2022                                                                              //
+// Design Name: Member Visibility Testbench                                                            //
+// Module Name:                                                                                        //
 // Project Name:   SystemVerilog OOP Training                                                          //
 // Language:       SystemVerilog - OOP                                                                 //
 //                                                                                                     //
 // Description:                                                                                        //
-//  Test body to initiate data to the dut by using Driver class                                        //
+//  Animal class with different types of member visibility                                             //
 //                                                                                                     //
 //                                                                                                     //                                                                                                     //
 // Revision Date:                                                                                      //
 //                                                                                                     //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
-module test (tb_interface.tb_i_o ifc);
-  
-  Driver drv_h;
-  
-  initial begin
-    drv_h = new(ifc);
-    drv_h.send_data(3,5);
-    #10;
-    drv_h.send_data(1,2);
-    #10;
-    drv_h.send_data(2,1);
-    #10;
-    drv_h.send_data(0,4);
-    #10;
-    drv_h.send_data(8,7);
-    #10;
-    drv_h.send_data(9,6);
-  end
+module testbench ();
+import pkg::*;
+
+Animal a_h;
+Cat b_h;
+initial begin
+  a_h = new();
+  b_h = new();
+  a_h.print();
+  b_h.print();
+
+end  
 endmodule

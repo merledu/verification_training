@@ -5,35 +5,32 @@
 //                                                                                                     //
 // Additional contributions by:                                                                        //
 //                                                                                                     //
-// Create Date: 20.03.2022                                                                             //
-// Design Name: test body                                                                              //
-// Module Name: test                                                                                   //
+// Create Date: 4.04.2022                                                                              //
+// Design Name: Animal Class                                                                           //
+// Module Name:                                                                                        //
 // Project Name:   SystemVerilog OOP Training                                                          //
 // Language:       SystemVerilog - OOP                                                                 //
 //                                                                                                     //
 // Description:                                                                                        //
-//  Test body to initiate data to the dut by using Driver class                                        //
+//  Animal class with different types of member visibility                                             //
 //                                                                                                     //
 //                                                                                                     //                                                                                                     //
 // Revision Date:                                                                                      //
 //                                                                                                     //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
-module test (tb_interface.tb_i_o ifc);
-  
-  Driver drv_h;
-  
-  initial begin
-    drv_h = new(ifc);
-    drv_h.send_data(3,5);
-    #10;
-    drv_h.send_data(1,2);
-    #10;
-    drv_h.send_data(2,1);
-    #10;
-    drv_h.send_data(0,4);
-    #10;
-    drv_h.send_data(8,7);
-    #10;
-    drv_h.send_data(9,6);
-  end
-endmodule
+class Animal;
+  protected int age;
+  string name;
+  local int weight;
+
+  function new();
+    weight = 23;
+    age  = 3      ;
+    name = "Fluffy";
+  endfunction
+
+  function void print();
+    $display("Age=%0d Name='%0s' Weight = %0d",age,name,weight);  
+  endfunction
+
+endclass

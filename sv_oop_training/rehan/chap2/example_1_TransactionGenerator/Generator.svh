@@ -6,34 +6,38 @@
 // Additional contributions by:                                                                        //
 //                                                                                                     //
 // Create Date: 20.03.2022                                                                             //
-// Design Name: test body                                                                              //
-// Module Name: test                                                                                   //
+// Design Name: Generator class                                                                        //
+// Module Name:                                                                                        //
 // Project Name:   SystemVerilog OOP Training                                                          //
 // Language:       SystemVerilog - OOP                                                                 //
 //                                                                                                     //
 // Description:                                                                                        //
-//  Test body to initiate data to the dut by using Driver class                                        //
+//  Generator class to create multiple transactions through clone method                               //
 //                                                                                                     //
 //                                                                                                     //                                                                                                     //
 // Revision Date:                                                                                      //
 //                                                                                                     //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
-module test (tb_interface.tb_i_o ifc);
+class Generator;
+  Transaction blueprint_h, tr_h;
+
+  function new();
+    blueprint_h = new(); // default object to be generated for creating clones
+  endfunction
+
+  task run();
+    for (int i =0; i<10; i++) begin
+      tr_h = blueprint_h.clone();
+      tr_h.src = i;
+      tr_h.calcCsm();
+     //  drive(tr_h);
+      $display("transaction:%0d derived",i);
+      $display("Object:%0d Data =%p",i,tr_h);
+    end
+  endtask
+
+  // task drive(Transaction trans_h);
   
-  Driver drv_h;
-  
-  initial begin
-    drv_h = new(ifc);
-    drv_h.send_data(3,5);
-    #10;
-    drv_h.send_data(1,2);
-    #10;
-    drv_h.send_data(2,1);
-    #10;
-    drv_h.send_data(0,4);
-    #10;
-    drv_h.send_data(8,7);
-    #10;
-    drv_h.send_data(9,6);
-  end
-endmodule
+  // endtask
+
+endclass

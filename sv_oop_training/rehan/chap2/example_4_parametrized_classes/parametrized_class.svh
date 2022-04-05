@@ -6,34 +6,30 @@
 // Additional contributions by:                                                                        //
 //                                                                                                     //
 // Create Date: 20.03.2022                                                                             //
-// Design Name: test body                                                                              //
-// Module Name: test                                                                                   //
+// Design Name: Parametrized class example                                                             //
+// Module Name: Top                                                                                    //
 // Project Name:   SystemVerilog OOP Training                                                          //
 // Language:       SystemVerilog - OOP                                                                 //
 //                                                                                                     //
 // Description:                                                                                        //
-//  Test body to initiate data to the dut by using Driver class                                        //
+//  Class vector to demonstrate a parametrized class and its use                                       //
 //                                                                                                     //
 //                                                                                                     //                                                                                                     //
 // Revision Date:                                                                                      //
 //                                                                                                     //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
-module test (tb_interface.tb_i_o ifc);
-  
-  Driver drv_h;
-  
+class Vector #(parameter SIZE = 32);
+  bit [SIZE-1:0] data;
+endclass
+
+module Top ();
+  Vector a32_h;
+  Vector #(10) a10_h;
+  Vector #(.SIZE(64)) a64_h;
+
   initial begin
-    drv_h = new(ifc);
-    drv_h.send_data(3,5);
-    #10;
-    drv_h.send_data(1,2);
-    #10;
-    drv_h.send_data(2,1);
-    #10;
-    drv_h.send_data(0,4);
-    #10;
-    drv_h.send_data(8,7);
-    #10;
-    drv_h.send_data(9,6);
+    a32_h = new();
+    a32_h.data = 'd23;
+    $display("data=%0d",a32_h.data);
   end
 endmodule

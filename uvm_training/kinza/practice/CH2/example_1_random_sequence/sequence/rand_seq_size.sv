@@ -32,12 +32,14 @@ class rand_size_seq extends uvm_sequence #(tx_item);
 
 	virtual task body();
 		tx_item tx;
-		repeat(block_size) begin //generate transactions for block size times
+		repeat(block_size) begin 			  //generate transactions for block size times
 		tx = tx_item::type_id::create("tx"); //Body task creates transaction using factory creation
-		start_item(tx);		       //Wait for driver to be ready
+		start_item(tx);		                //Wait for driver to be ready
 		if (!tx.randomize())		       // Randomize transaction
 			`uvm_fatal("Fatal","Randomization Failed")
-		finish_item(tx);		      //Sends transaction and waits for response from driver to know when it is ready again to generate 							and send transactions again
+		finish_item(tx);		         /*Sends transaction and waits for response from driver to 
+										   know whenit is ready again to generate and send transactions again. */
 		end
 	endtask
+
 endclass

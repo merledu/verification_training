@@ -21,12 +21,15 @@ class tx_driver extends uvm_driver #(tx_dst_fixed);
 
 	//Factory Registration
 	`uvm_component_utils(tx_driver)
-  /*constructor has 2 arguments: 
-	  1) name of the object
+
+   /*constructor has 2 arguments: 
+    1) name of the object
     2) handle to the parent */
+
 	function new(string name,uvm_component parent);
 		super.new(name,parent);
 	endfunction
+
 	virtual task run_phase(uvm_phase phase);
 		tx_dst_fixed tx;
 		forever begin
@@ -35,9 +38,11 @@ class tx_driver extends uvm_driver #(tx_dst_fixed);
 			seq_item_port.item_done();	
 		end
 	endtask
+
 	virtual task transfer(tx_dst_fixed tr);
 		`uvm_info("TRANSFER",$sformatf("tr.fixed_dst=%3d",tr.fixed_dst),UVM_LOW);
 		`uvm_info("TRANSFER",$sformatf("tr.dst=%3d",tr.dst),UVM_LOW);
 		`uvm_info("TRANSFER",$sformatf("tr.src=%3d",tr.src),UVM_LOW);
 	endtask
+	
 endclass

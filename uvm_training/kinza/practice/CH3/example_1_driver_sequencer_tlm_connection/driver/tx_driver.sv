@@ -44,7 +44,7 @@ class tx_driver extends uvm_driver #(tx_item);
 			seq_item_port.get_next_item(tx); /*Driver call get_next_item which blocks the the driver until
 										       sequence send transaction handle to the driver by calling 
 											   finish item. This action unblocks the sequence. */
-			//vif.transfer(tx); 			//transfer the item to the dut via virtual interface
+			//vif.transfer(tx); 			 //transfer the item to the dut via virtual interface
 			transfer(tx); 
 			seq_item_port.item_done(); 		/*When the transaction completes, the driver calls item_done() 
 											  to tell the seq it is done with the item. This call unblocks 

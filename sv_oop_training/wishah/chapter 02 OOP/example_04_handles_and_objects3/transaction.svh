@@ -1,36 +1,45 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Company:        MICRO-ELECTRONICS RESEARCH LABORATORY                                               //
 //                                                                                                     //
-// Engineers:      Rehan Ejaz - Verification                                                           //
+// Engineers:      Wishah Naseer - Verification	Engineer                                               //
 //                                                                                                     //
 // Additional contributions by:                                                                        //
 //                                                                                                     //
-// Create Date: 20.03.2022 11:18:36                                                                    //
-// Design Name: Driver class                                                                           //
-// Module Name:                                                                                        //
-// Project Name:   SystemVerilog OOP Training                                                          //
-// Language:       SystemVerilog - OOP                                                                 //
+// Create Date:    28-MARCH-2022                                                                       //
+// Design Name:    SV OOP Practice                                                                     //
+// Module Name:    transaction.sv                                                                      //
+// Project Name:   SV OOP Training                                                                     //
+// Language:       SystemVerilog - UVM                                                                 //
 //                                                                                                     //
 // Description:                                                                                        //
-//  OOP based CLASS to understand basic Classes of system verilog and their properties                 //
-//                                                                                                     //
+//     - transaction class                                                                             //
 //                                                                                                     //
 //                                                                                                     //
 // Revision Date:                                                                                      //
 //                                                                                                     //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-class Driver;  
-  
-  virtual tb_interface.tb_i_o vif;
+class transaction;
+	bit [31:0] src, dst, csm, data[8]; 
+	
+	function void calcCsm();
+		csm = src ^ dst ^data.xor();
+	endfunction
 
-  function new(virtual tb_interface.tb_i_o vif);
-    this.vif = vif;
-  endfunction
+	function void print();
+		$display("Tr: src=%h, dst=%h, csm=%h, data=%p", src, dst, csm, data);
+	endfunction
 
-  task send_data(input logic [7:0] a, b);
-    vif.a <= a;
-    vif.b <= b;
-  endtask //new()
+	function void copy(transaction rhs_h);
+		src  = rhs_h.src;
+		dst  = rhs_h.dst;
+		data = rhs_h.data;
+		csm  = rhs_h.csm;
+	endfunction
 
-  endclass //className
+	function transaction clone();
+		clone = new();
+		clone.copy(this);
+	endfunction
+	
+endclass

@@ -6,34 +6,46 @@
 // Additional contributions by:                                                                        //
 //                                                                                                     //
 // Create Date: 20.03.2022                                                                             //
-// Design Name: test body                                                                              //
-// Module Name: test                                                                                   //
+// Design Name: Bad transaction class                                                                  //
+// Module Name:                                                                                        //
 // Project Name:   SystemVerilog OOP Training                                                          //
 // Language:       SystemVerilog - OOP                                                                 //
 //                                                                                                     //
 // Description:                                                                                        //
-//  Test body to initiate data to the dut by using Driver class                                        //
+//  Bad transaction class that extends the transaction class and corrupts the checksum                 //
 //                                                                                                     //
 //                                                                                                     //                                                                                                     //
 // Revision Date:                                                                                      //
 //                                                                                                     //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
-module test (tb_interface.tb_i_o ifc);
+class BadTr extends Transaction;
+  bit badCsm; // Corrupt the CSM 
+  // override existing Methods
+ 
+  virtual function void calcCsm();
+    super.calcCsm();       // Compute checksum
+    if(badCsm) csm = ~csm; // Corrupt if bad
+  endfunction
   
-  Driver drv_h;
-  
-  initial begin
-    drv_h = new(ifc);
-    drv_h.send_data(3,5);
-    #10;
-    drv_h.send_data(1,2);
-    #10;
-    drv_h.send_data(2,1);
-    #10;
-    drv_h.send_data(0,4);
-    #10;
-    drv_h.send_data(8,7);
-    #10;
-    drv_h.send_data(9,6);
-  end
-endmodule
+  virtual function void print();
+    $write("BadTr: badCsm=%b ", badCsm);
+    super.print();
+  endfunction
+
+	virtual function void copy(Transaction rhs_h);
+    BadTr b_h;
+    if(!$cast(b_h, rhs_h)) 
+    $fatal("cast error");
+    super.copy(rhs_h);
+    badCsm = b_h.badCsm;
+  endfunction
+
+
+  virtual function Transaction clone();
+    BadTr b_h;
+    b_h = new();
+    clone = b_h;
+    clone.copy(this);
+  endfunction
+
+endclass

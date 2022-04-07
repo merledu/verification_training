@@ -1,39 +1,35 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Company:        MICRO-ELECTRONICS RESEARCH LABORATORY                                               //
 //                                                                                                     //
-// Engineers:      Rehan Ejaz - Verification                                                           //
+// Engineers:      Wishah Naseer - Verification	Engineer                                               //
 //                                                                                                     //
 // Additional contributions by:                                                                        //
 //                                                                                                     //
-// Create Date: 20.03.2022                                                                             //
-// Design Name: test body                                                                              //
-// Module Name: test                                                                                   //
-// Project Name:   SystemVerilog OOP Training                                                          //
-// Language:       SystemVerilog - OOP                                                                 //
+// Create Date:    28-MARCH-2022                                                                       //
+// Design Name:    SV OOP Practice                                                                     //
+// Module Name:    test.sv                                                                             //
+// Project Name:   SV OOP Training                                                                     //
+// Language:       SystemVerilog - UVM                                                                 //
 //                                                                                                     //
 // Description:                                                                                        //
-//  Test body to initiate data to the dut by using Driver class                                        //
+//     - test for both classes                                                                         //
 //                                                                                                     //
-//                                                                                                     //                                                                                                     //
+//                                                                                                     //
 // Revision Date:                                                                                      //
 //                                                                                                     //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
-module test (tb_interface.tb_i_o ifc);
-  
-  Driver drv_h;
-  
+module test();
+import pkg::*;
+  transaction t3_h;
+  badtr b3_h,b4_h;
   initial begin
-    drv_h = new(ifc);
-    drv_h.send_data(3,5);
-    #10;
-    drv_h.send_data(1,2);
-    #10;
-    drv_h.send_data(2,1);
-    #10;
-    drv_h.send_data(0,4);
-    #10;
-    drv_h.send_data(8,7);
-    #10;
-    drv_h.send_data(9,6);
+    b3_h = new();
+    b3_h.badCsm = 1;
+    b3_h.print();
+    t3_h = b3_h;
+    $cast(b4_h,t3_h);
+    $display(b4_h.badCsm);
+    if (! $cast(b4_h, t3_h))
+      $fatal(1,"$cast failed");
   end
 endmodule

@@ -1,3 +1,7 @@
 *.log
 *.history
 *.d
+*.simvision
+*.shm
+*.dsn
+*.key

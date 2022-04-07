@@ -1,39 +1,41 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Company:        MICRO-ELECTRONICS RESEARCH LABORATORY                                               //
 //                                                                                                     //
-// Engineers:      Rehan Ejaz - Verification                                                           //
+// Engineers:      Wishah Naseer - Verification	Engineer                                               //
 //                                                                                                     //
 // Additional contributions by:                                                                        //
 //                                                                                                     //
-// Create Date: 20.03.2022                                                                             //
-// Design Name: test body                                                                              //
-// Module Name: test                                                                                   //
-// Project Name:   SystemVerilog OOP Training                                                          //
-// Language:       SystemVerilog - OOP                                                                 //
+// Create Date:    31-MARCH-2022                                                                       //
+// Design Name:    SV OOP Practice                                                                     //
+// Module Name:    fork_join.sv                                                                        //
+// Project Name:   SV OOP Training                                                                     //
+// Language:       SystemVerilog - UVM                                                                 //
 //                                                                                                     //
 // Description:                                                                                        //
-//  Test body to initiate data to the dut by using Driver class                                        //
+//           This modules explains how fork_join works. In  fork_join first all the threads in fork    //
+//           completes then it moves towards the parent statement after join                           //
 //                                                                                                     //
-//                                                                                                     //                                                                                                     //
 // Revision Date:                                                                                      //
 //                                                                                                     //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
-module test (tb_interface.tb_i_o ifc);
-  
-  Driver drv_h;
-  
+
+
+module fork_join; 
   initial begin
-    drv_h = new(ifc);
-    drv_h.send_data(3,5);
-    #10;
-    drv_h.send_data(1,2);
-    #10;
-    drv_h.send_data(2,1);
-    #10;
-    drv_h.send_data(0,4);
-    #10;
-    drv_h.send_data(8,7);
-    #10;
-    drv_h.send_data(9,6);
+    
+    $display($time,"START FORK-JOIN EXAMPLE");
+    
+    fork
+        #15 $display($time,"Thread 1");
+        #5  $display($time,"Thread 2");
+      begin
+        #10 $display($time,"Thread 3");
+        #2  $display($time,"Thread 4");
+      end
+    join
+    
+      #7  $display($time,"PARENT STATEMENT");
+ 
+    $display($time,"FORK-JOIN ENDED");
   end
 endmodule

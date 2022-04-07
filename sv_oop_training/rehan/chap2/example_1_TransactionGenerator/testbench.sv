@@ -6,34 +6,41 @@
 // Additional contributions by:                                                                        //
 //                                                                                                     //
 // Create Date: 20.03.2022                                                                             //
-// Design Name: test body                                                                              //
-// Module Name: test                                                                                   //
+// Design Name: Testbench                                                                              //
+// Module Name:  testbench                                                                             //
 // Project Name:   SystemVerilog OOP Training                                                          //
 // Language:       SystemVerilog - OOP                                                                 //
 //                                                                                                     //
 // Description:                                                                                        //
-//  Test body to initiate data to the dut by using Driver class                                        //
+//  testbench file to declare all handles and initiate the testbench                                   //
 //                                                                                                     //
 //                                                                                                     //                                                                                                     //
 // Revision Date:                                                                                      //
 //                                                                                                     //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
-module test (tb_interface.tb_i_o ifc);
-  
-  Driver drv_h;
-  
+module testbench();
+import pkg::*;
+
+  Transaction tr_h;
+  BadTr b_h;
+  BaseTest c_h;
+  BadTest d_h;
   initial begin
-    drv_h = new(ifc);
-    drv_h.send_data(3,5);
-    #10;
-    drv_h.send_data(1,2);
-    #10;
-    drv_h.send_data(2,1);
-    #10;
-    drv_h.send_data(0,4);
-    #10;
-    drv_h.send_data(8,7);
-    #10;
-    drv_h.send_data(9,6);
+    tr_h  = new();
+    tr_h.calcCsm();
+    tr_h.print();
+    b_h = new();
+    b_h.calcCsm();
+    b_h.print();
+    b_h.badCsm = 1;
+    b_h.calcCsm();
+    b_h.print();
+    $display(b_h.badCsm);
+    c_h = new();
+    c_h.run();
+    d_h = new();
+    d_h.run();
+
   end
+  
 endmodule

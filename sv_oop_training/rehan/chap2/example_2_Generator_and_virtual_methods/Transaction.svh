@@ -6,34 +6,39 @@
 // Additional contributions by:                                                                        //
 //                                                                                                     //
 // Create Date: 20.03.2022                                                                             //
-// Design Name: test body                                                                              //
-// Module Name: test                                                                                   //
+// Design Name: Transaction Class                                                                      //
+// Module Name:                                                                                        //
 // Project Name:   SystemVerilog OOP Training                                                          //
 // Language:       SystemVerilog - OOP                                                                 //
 //                                                                                                     //
 // Description:                                                                                        //
-//  Test body to initiate data to the dut by using Driver class                                        //
+//  Trancaction class to generate transaction with a simple method of checksum                         //
 //                                                                                                     //
 //                                                                                                     //                                                                                                     //
 // Revision Date:                                                                                      //
 //                                                                                                     //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
-module test (tb_interface.tb_i_o ifc);
-  
-  Driver drv_h;
-  
-  initial begin
-    drv_h = new(ifc);
-    drv_h.send_data(3,5);
-    #10;
-    drv_h.send_data(1,2);
-    #10;
-    drv_h.send_data(2,1);
-    #10;
-    drv_h.send_data(0,4);
-    #10;
-    drv_h.send_data(8,7);
-    #10;
-    drv_h.send_data(9,6);
-  end
-endmodule
+class Transaction;
+	bit [31:0] src, dst, csm, data[8]; // Properties
+	
+	virtual function void calcCsm();
+		csm = src ^ dst ^data.xor();
+	endfunction
+
+	virtual function void print();
+		$display("Tr: src=%h, dst=%h, csm=%h, data=%p", src, dst, csm, data);
+	endfunction
+
+	virtual function void copy(Transaction rhs_h);
+		src  = rhs_h.src;
+		dst  = rhs_h.dst;
+		data = rhs_h.data;
+		csm  = rhs_h.csm;
+	endfunction
+
+	virtual function Transaction clone();
+		clone = new();
+		clone.copy(this);
+	endfunction
+	
+endclass

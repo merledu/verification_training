@@ -1,36 +1,46 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Company:        MICRO-ELECTRONICS RESEARCH LABORATORY                                               //
 //                                                                                                     //
-// Engineers:      Rehan Ejaz - Verification                                                           //
+// Engineers:      Wishah Naseer - Verification	Engineer                                               //
 //                                                                                                     //
 // Additional contributions by:                                                                        //
 //                                                                                                     //
-// Create Date: 20.03.2022 11:18:36                                                                    //
-// Design Name: Driver class                                                                           //
-// Module Name:                                                                                        //
-// Project Name:   SystemVerilog OOP Training                                                          //
-// Language:       SystemVerilog - OOP                                                                 //
+// Create Date:    28-MARCH-2022                                                                       //
+// Design Name:    SV OOP Practice                                                                     //
+// Module Name:    badtr.sv                                                                            //
+// Project Name:   SV OOP Training                                                                     //
+// Language:       SystemVerilog - UVM                                                                 //
 //                                                                                                     //
 // Description:                                                                                        //
-//  OOP based CLASS to understand basic Classes of system verilog and their properties                 //
-//                                                                                                     //
+//     - Bad Transaction class                                                                         //
 //                                                                                                     //
 //                                                                                                     //
 // Revision Date:                                                                                      //
 //                                                                                                     //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-class Driver;  
+class badtr extends transaction;
+  bit badCsm; 
+ 
+  function void calcCsm();
+    super.calcCsm();       
+    if(badCsm) csm = ~csm; 
+  endfunction
   
-  virtual tb_interface.tb_i_o vif;
-
-  function new(virtual tb_interface.tb_i_o vif);
-    this.vif = vif;
+  function void print();
+    $write("badtr: badCsm=%b ", badCsm);
+    super.print();
   endfunction
 
-  task send_data(input logic [7:0] a, b);
-    vif.a <= a;
-    vif.b <= b;
-  endtask //new()
+	function void copy(badtr rhs_h);
+    badCsm = rhs_h.badCsm;
+  endfunction
 
-  endclass //className
+  function transaction clone();
+    badtr b_h;
+    b_h = new();
+    clone = b_h;
+    clone.copy(this);
+  endfunction
+
+endclass

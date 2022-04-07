@@ -1,39 +1,46 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Company:        MICRO-ELECTRONICS RESEARCH LABORATORY                                               //
 //                                                                                                     //
-// Engineers:      Rehan Ejaz - Verification                                                           //
+// Engineers:      Wishah Naseer - Verification	Engineer                                               //
 //                                                                                                     //
 // Additional contributions by:                                                                        //
 //                                                                                                     //
-// Create Date: 20.03.2022                                                                             //
-// Design Name: test body                                                                              //
-// Module Name: test                                                                                   //
-// Project Name:   SystemVerilog OOP Training                                                          //
-// Language:       SystemVerilog - OOP                                                                 //
+// Create Date:    31-MARCH-2022                                                                       //
+// Design Name:    SV OOP Practice                                                                     //
+// Module Name:    disable_specific_fork.sv                                                            //
+// Project Name:   SV OOP Training                                                                     //
+// Language:       SystemVerilog - UVM                                                                 //
 //                                                                                                     //
 // Description:                                                                                        //
-//  Test body to initiate data to the dut by using Driver class                                        //
+//           This modules explains how disable_specifc_thread works.                                   //
 //                                                                                                     //
-//                                                                                                     //                                                                                                     //
+//                                                                                                     //
 // Revision Date:                                                                                      //
 //                                                                                                     //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
-module test (tb_interface.tb_i_o ifc);
-  
-  Driver drv_h;
-  
+
+module disable_specific_thread;
+ 
   initial begin
-    drv_h = new(ifc);
-    drv_h.send_data(3,5);
-    #10;
-    drv_h.send_data(1,2);
-    #10;
-    drv_h.send_data(2,1);
-    #10;
-    drv_h.send_data(0,4);
-    #10;
-    drv_h.send_data(8,7);
-    #10;
-    drv_h.send_data(9,6);
+    $display("DISABLE_SPECIFIC_THREAD EXAMPLE");
+
+    fork
+      begin : A1
+        $display($time,"Thread 1");
+        #30;
+        $display($time,"Thread 2");
+      end
+ 
+      begin : B1
+        $display($time,"Thread 3");
+        #15;
+        $display($time,"Thread 4");
+      end
+    join_any
+         
+    disable A1;
+ 
+    $display("END OF DISABLE_SPECIFIC_THREAD");
+  
   end
 endmodule

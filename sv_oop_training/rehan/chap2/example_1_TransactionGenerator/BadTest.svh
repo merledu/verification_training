@@ -6,34 +6,26 @@
 // Additional contributions by:                                                                        //
 //                                                                                                     //
 // Create Date: 20.03.2022                                                                             //
-// Design Name: test body                                                                              //
-// Module Name: test                                                                                   //
+// Design Name: Bad test class                                                                         //
+// Module Name:                                                                                        //
 // Project Name:   SystemVerilog OOP Training                                                          //
 // Language:       SystemVerilog - OOP                                                                 //
 //                                                                                                     //
 // Description:                                                                                        //
-//  Test body to initiate data to the dut by using Driver class                                        //
+//  Bad test class to inject bad transactions into the generator                                       //
 //                                                                                                     //
 //                                                                                                     //                                                                                                     //
 // Revision Date:                                                                                      //
 //                                                                                                     //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
-module test (tb_interface.tb_i_o ifc);
-  
-  Driver drv_h;
-  
-  initial begin
-    drv_h = new(ifc);
-    drv_h.send_data(3,5);
-    #10;
-    drv_h.send_data(1,2);
-    #10;
-    drv_h.send_data(2,1);
-    #10;
-    drv_h.send_data(0,4);
-    #10;
-    drv_h.send_data(8,7);
-    #10;
-    drv_h.send_data(9,6);
-  end
-endmodule
+class BadTest extends BaseTest;
+BadTr badBlue_h;
+
+function new();
+  super.new();
+  badBlue_h = new();
+  badBlue_h.badCsm = 1;
+  gen_h.blueprint_h = badBlue_h;
+endfunction
+
+endclass

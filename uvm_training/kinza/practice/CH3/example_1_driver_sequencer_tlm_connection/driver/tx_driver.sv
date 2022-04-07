@@ -41,10 +41,14 @@ class tx_driver extends uvm_driver #(tx_item);
 	virtual task run_phase(uvm_phase phase);
 		tx_item tx;
 		forever begin
-			seq_item_port.get_next_item(tx); //Driver call get_next_item which blocks the the driver until sequence send transaction handle to the driver by 																					calling finish item. This action unblocks the sequence
-			//vif.transfer(tx); 						//transfer the item to the dut via virtual interface
+			seq_item_port.get_next_item(tx); /*Driver call get_next_item which blocks the the driver until
+										       sequence send transaction handle to the driver by calling 
+											   finish item. This action unblocks the sequence. */
+			//vif.transfer(tx); 			//transfer the item to the dut via virtual interface
 			transfer(tx); 
-			seq_item_port.item_done(); 		//When the transaction completes, the driver calls item_done() to tell the seq it is done with the item. This 																					call unblocks the sequence
+			seq_item_port.item_done(); 		/*When the transaction completes, the driver calls item_done() 
+											  to tell the seq it is done with the item. This call unblocks 
+											  the sequence. */
 		end
 	endtask
 
@@ -55,4 +59,5 @@ class tx_driver extends uvm_driver #(tx_item);
 
 endclass
 
-/*NOTE: This driver class is just a sample. The commented statements will be used once we have DUT. For now, simply ignore these statements.*/
+/*NOTE: This driver class is just a sample. The commented statements will be used once we have DUT. 
+		For now, simply ignore these statements.*/

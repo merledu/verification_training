@@ -21,8 +21,8 @@ class tx_agent extends uvm_agent;
 
 	//Factory registration
 	`uvm_component_utils(tx_agent)
+	
 	//constructor
-
 	function new(string name,uvm_component parent);
 		super.new(name,parent);
 	endfunction

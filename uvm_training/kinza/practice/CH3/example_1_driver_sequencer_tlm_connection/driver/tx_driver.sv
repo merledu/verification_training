@@ -60,4 +60,4 @@ class tx_driver extends uvm_driver #(tx_item);
 endclass
 
 /*NOTE: This driver class is just a sample. The commented statements will be used once we have DUT. 
-		For now, simply ignore these statements.*/
+				For now, simply ignore these statements.*/

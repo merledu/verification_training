@@ -21,7 +21,9 @@
 module top ;
 	import uvm_pkg::*;
 	import hello_pkg::*;
+
 	initial begin
-		run_test(); // run_test Start execution of uvm phases
+		run_test(); // run_test start execution of uvm phases
 	end 
+
 endmodule 

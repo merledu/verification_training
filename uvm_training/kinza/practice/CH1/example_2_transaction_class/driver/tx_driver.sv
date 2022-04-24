@@ -14,10 +14,10 @@
 // Description:                                                                                        //
 //          tx_driver is a specialized class that carries tx_item.                                     //
 // Revision Date:                                                                                      //
-//                                                                                                     //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class tx_driver extends uvm_driver #(tx_item); //Specialized class with tx_item
+	
 	//Factory Registration
 	`uvm_component_utils(tx_driver)
 
@@ -40,4 +40,5 @@ class tx_driver extends uvm_driver #(tx_item); //Specialized class with tx_item
 	virtual task transfer(tx_item tr);
 		`uvm_info("TRANSFER",$sformatf("tr.data=%3d",tr.data),UVM_LOW);
 	endtask
+	
 endclass

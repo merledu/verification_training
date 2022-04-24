@@ -13,14 +13,14 @@
 //                                                                                                     //
 // Description:                                                                                        //
 //          tx_sequence randomizes the sequence item five times and sends them to driver.              //
-//                                                                                                     //
 // Revision Date:                                                                                      //
-//                                                                                                     //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class tx_sequence extends uvm_sequence #(tx_item);
+
 	//Factory Registration
 	`uvm_object_utils(tx_sequence)
+	
 	//Constructor
 	function new(string name="tx_sequence");
 		super.new(name);
@@ -37,4 +37,5 @@ class tx_sequence extends uvm_sequence #(tx_item);
 											     know when it is ready again to generate and send transactions again */
 		end
 	endtask
+
 endclass

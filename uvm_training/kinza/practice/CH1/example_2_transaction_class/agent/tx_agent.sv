@@ -13,12 +13,11 @@
 //                                                                                                     //
 // Description:                                                                                        //
 //          tx_agent builds and connects driver and sequencer.                                         //
-//         items.                                                                                      //
 // Revision Date:                                                                                      //
-//                                                                                                     //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class tx_agent extends uvm_agent;
+
     //Factory registration
     `uvm_component_utils(tx_agent)
 

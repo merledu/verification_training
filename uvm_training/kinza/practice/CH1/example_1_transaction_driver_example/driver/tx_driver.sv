@@ -13,7 +13,6 @@
 //                                                                                                     //
 // Description:                                                                                        //
 //          tx_driver is a specialized class that carries tx_item.                                     //
-//         items.                                                                                      //
 // Revision Date:                                                                                      //
 //                                                                                                     //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////

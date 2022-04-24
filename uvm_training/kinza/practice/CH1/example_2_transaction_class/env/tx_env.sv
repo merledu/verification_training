@@ -13,14 +13,14 @@
 //                                                                                                     //
 // Description:                                                                                        //
 //          tx_env instantiate the agent in the build phase.                                           //
-//                                                                                                     //
 // Revision Date:                                                                                      //
-//                                                                                                     //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class tx_env extends uvm_env;
+
 	//Factory registration
 	`uvm_component_utils(tx_env)
+	
 	//constructor
 	function new(string name,uvm_component parent);
 		super.new(name,parent);

@@ -2,6 +2,7 @@ class tx_test extends uvm_test;
 
 	//Factory registration
 	`uvm_component_utils(tx_test)
+	
 	//constructor
 	function new(string name,uvm_component parent);
 		super.new(name,parent);
@@ -27,5 +28,5 @@ class tx_test extends uvm_test;
 	function void end_of_elaboration_phase(uvm_phase phase);
 		  uvm_top.print_topology();
 	endfunction : end_of_elaboration_phase
-	
+
 endclass

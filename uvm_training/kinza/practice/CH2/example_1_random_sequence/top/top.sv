@@ -20,8 +20,9 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 module top;
+
     `include "uvm_macros.svh" //Includes uvm macros utility
-    import uvm_pkg::*; //import uvm base classes
+    import uvm_pkg::*;       //import uvm base classes
     `include "tx_item.sv"
     `include "rand_size_seq.sv"
     `include "tx_driver.sv"
@@ -30,7 +31,8 @@ module top;
     `include "tx_test.sv"
 
     initial begin
-        run_test(); // run_test Start execution of uvm phases
+        run_test();     // run_test Start execution of uvm phases
     end 
+    
 endmodule 
 

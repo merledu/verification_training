@@ -14,5 +14,6 @@ module top;
 	initial begin
 		run_test(); // run_test Start execution of uvm phases
 	end 
+	
 endmodule 
 

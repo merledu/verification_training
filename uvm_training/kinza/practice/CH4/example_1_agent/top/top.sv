@@ -12,7 +12,7 @@ module top;
 	`include "tx_test.sv"
 
 	initial begin
-		run_test(); // run_test Start execution of uvm phases
+		run_test();  //run_test start execution of uvm phases
 	end 
 	
 endmodule 

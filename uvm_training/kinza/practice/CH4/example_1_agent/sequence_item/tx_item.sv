@@ -8,12 +8,12 @@
 // Create Date:    20-MARCH-2022                                                                       //
 // Design Name:    Analysis port example                                                               //
 // Module Name:    tx_item.sv                                                                          //
-// Project Name:   Agent-Monitor TLM connection              		                                   //
+// Project Name:   Agent-Monitor TLM connection              		                          		         //
 // Language:       SystemVerilog - UVM                                                                 //
 //                                                                                                     //
 // Description:                                                                                        //
 //         The tx_item class extends from uvm_sequence_item is used to generate 31-bit random a and    //
-//		   b items.                                                                                    //
+//		     b items.                                                                             		   //
 // Revision Date:                                                                                      //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 

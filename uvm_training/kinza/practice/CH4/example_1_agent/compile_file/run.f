@@ -6,9 +6,9 @@
 // Additional contributions by:                                                                        //
 //                                                                                                     //
 // Create Date:    20-MARCH-2022                                                                       //
-// Design Name:    Agent example                                                                       //
+// Design Name:    Analysis port example                                                               //
 // Module Name:    run.f                                                                               //
-// Project Name:   Agent-Monitor example                                                               //
+// Project Name:   Agent-Monitor TLM connection              		                                       //
 // Language:       SystemVerilog - UVM                                                                 //
 //                                                                                                     //
 // Description:                                                                                        //

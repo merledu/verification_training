@@ -1,3 +1,21 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Company:        MICRO-ELECTRONICS RESEARCH LABORATORY                                               //
+//                                                                                                     //
+// Engineers:      Kinza Qamar Zaman - Verification                                                    //
+//                                                                                                     //
+// Additional contributions by:                                                                        //
+//                                                                                                     //
+// Create Date:    20-MARCH-2022                                                                       //
+// Design Name:    Analysis port example                                                               //
+// Module Name:    tx_test.sv                                                                          //
+// Project Name:   Agent-Monitor TLM connection              		                                       //
+// Language:       SystemVerilog - UVM                                                                 //
+//                                                                                                     //
+// Description:                                                                                        //
+//         The tx_test class extends from uvm_test is used to start the sequence.                      //
+// Revision Date:                                                                                      //
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 class tx_test extends uvm_test;
 
 	//Factory registration
@@ -14,14 +32,17 @@ class tx_test extends uvm_test;
 		env = tx_env::type_id::create("env",this);
 	endfunction
 
-	//Connect phase not required as we have no other component except of an agent class, exist inside the environment hierarchy
+	/*Connect phase not required as we have no other component except of 
+		an agent class, exist inside the environment hierarchy. */
 	virtual task run_phase (uvm_phase phase);
 		tx_sequence seq;
 	 	seq = tx_sequence::type_id::create("seq");
 		phase.raise_objection(this,"Start tx_sequence"); 
 		seq.start(env.agt.sqr);
-		//test raises an object and calls the start method in the sequence passing in a handle to the seqr. The sequence start method call body().
-		phase.drop_objection(this,"End tx_sequence"); //when the seq body() task return, it drops the objection telling UVM that the stimulus is done and 																										run_phase() is over.
+		/*test raises an object and calls the start method in the sequence passing 
+			in a handle to the seqr. The sequence start method call body(). */
+		phase.drop_objection(this,"End tx_sequence"); /*when the seq body() task return, it drops the objection 
+																										telling UVM that the stimulus is done and run_phase() is over. */
 	endtask
 
 	//Print topology report

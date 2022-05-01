@@ -1,3 +1,21 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Company:        MICRO-ELECTRONICS RESEARCH LABORATORY                                               //
+//                                                                                                     //
+// Engineers:      Kinza Qamar Zaman - Verification                                                    //
+//                                                                                                     //
+// Additional contributions by:                                                                        //
+//                                                                                                     //
+// Create Date:    20-MARCH-2022                                                                       //
+// Design Name:    Analysis port example                                                               //
+// Module Name:    tx_agent.sv                                                                         //
+// Project Name:   Agent-Monitor TLM connection              		                                       //
+// Language:       SystemVerilog - UVM                                                                 //
+//                                                                                                     //
+// Description:                                                                                        //
+//          tx_agent builds and connects driver and sequencer.                                         //
+// Revision Date:                                                                                      //
+//                                                                                                     //
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class tx_agent extends uvm_agent;
 	//Factory registration
@@ -10,10 +28,10 @@ class tx_agent extends uvm_agent;
 
 	tx_driver drv;
 	tx_monitor mon;
-	uvm_sequencer #(tx_item) sqr; //Never extended
-	agent_config agt_cfg; 		 //agent configuration class handle
-	uvm_analysis_port #(tx_item) dut_in_tx_port;  //for sending input transactions
-	uvm_analysis_port #(tx_item) dut_out_tx_port; //for sending output transactions
+	uvm_sequencer #(tx_item) sqr; 										//Never extended
+	agent_config agt_cfg; 		   										 //agent configuration class handle
+	uvm_analysis_port #(tx_item) dut_in_tx_port; 	  //for sending input transactions
+	uvm_analysis_port #(tx_item) dut_out_tx_port;	 //for sending output transactions
 
 	//building the components inside the hierarchy of agent class
 	virtual function void build_phase(uvm_phase phase);

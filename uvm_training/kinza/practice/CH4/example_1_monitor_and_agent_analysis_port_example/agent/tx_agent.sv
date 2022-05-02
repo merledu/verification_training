@@ -18,6 +18,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class tx_agent extends uvm_agent;
+
 	//Factory registration
 	`uvm_component_utils(tx_agent)
 
@@ -28,11 +29,11 @@ class tx_agent extends uvm_agent;
 
 	tx_driver drv;
 	tx_monitor mon;
-	uvm_sequencer #(tx_item) sqr; 										//Never extended
-	agent_config agt_cfg; 		   										 //agent configuration class handle
-	uvm_analysis_port #(tx_item) dut_in_tx_port; 	  //for sending input transactions
-	uvm_analysis_port #(tx_item) dut_out_tx_port;	 //for sending output transactions
-
+	uvm_sequencer #(tx_item) sqr; 								   //Never extended
+	agent_config agt_cfg; 												  //agent configuration class handle
+	uvm_analysis_port #(tx_item) dut_in_tx_port; 	 //for sending input transactions
+	uvm_analysis_port #(tx_item) dut_out_tx_port;	//for sending output transactions
+	
 	//building the components inside the hierarchy of agent class
 	virtual function void build_phase(uvm_phase phase);
 	//get configuration information. Will be covered in later examples
@@ -53,5 +54,6 @@ class tx_agent extends uvm_agent;
 		if (agt_cfg.active == UVM_ACTIVE) 
 			drv.seq_item_port.connect(sqr.seq_item_export); //Can't connect in build phase
 	endfunction
-	
+
 endclass
+

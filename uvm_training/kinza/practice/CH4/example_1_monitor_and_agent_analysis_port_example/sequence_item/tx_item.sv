@@ -13,7 +13,7 @@
 //                                                                                                     //
 // Description:                                                                                        //
 //         The tx_item class extends from uvm_sequence_item is used to generate 31-bit random a and    //
-//		     b items.                                                                             		   //
+//		   b items.                                                                             		     //
 // Revision Date:                                                                                      //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 

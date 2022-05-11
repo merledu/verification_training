@@ -12,10 +12,9 @@
 // Language:       SystemVerilog - OOP                                                                 //
 //                                                                                                     //
 // Description:                                                                                        //
-//         - This is the top file in which we construct the object of animal class and access its      //
-//           members.                                                                                  //
+//             This is the top file in which we construct the object of animal class and access its    //
+//             members.                                                                                //
 // Revision Date:                                                                                      //
-//                                                                                                     //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 module top;

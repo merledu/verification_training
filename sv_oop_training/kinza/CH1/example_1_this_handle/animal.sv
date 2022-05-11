@@ -40,6 +40,7 @@ class animal;
 		#1 age++;
 	endtask
 
+//Method makedog()
 	task makedog();
 		animal a_h;
 		a_h = new(.age(3),.name("Fluffy"));

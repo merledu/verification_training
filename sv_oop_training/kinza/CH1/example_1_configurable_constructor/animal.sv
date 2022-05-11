@@ -42,7 +42,7 @@ class animal;
 
 	task makedog();
 		animal a_h;
-		a_h = new(.age(3),.name("Fluffy"));
+		a_h = new(.age_arg(3),.name_arg("Fluffy"));
 	endtask
 	
 endclass

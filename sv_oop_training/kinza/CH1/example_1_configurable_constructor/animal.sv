@@ -24,9 +24,9 @@ class animal;
   string name;
 
 //Class constructor
-	function new(int age,string name);
-		this.age = age; // this is an implicit handle to point the properties of the current object's class
-		this.name = name;
+	function new(int age_arg,string name_arg);
+		age  = age_arg; // this is an implicit handle to point the properties of the current object's class
+		name = name_arg;
 	endfunction 
 
 //Method to display properties of the animal

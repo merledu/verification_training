@@ -14,7 +14,7 @@
 // Description:                                                                                        //
 //             This class example aims to demonstrate the use of this handle. The handle "this" points //
 //             to the properties of the class when both the arguments and class propeties have         //
-//			   same name.                                                                              //
+//			   		 same name.                                                                              //
 // Revision Date:                                                                                      //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 

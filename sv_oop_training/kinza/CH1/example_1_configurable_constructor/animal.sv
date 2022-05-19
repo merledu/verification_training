@@ -7,26 +7,26 @@
 //                                                                                                     //
 // Create Date:    18-MARCH-2022                                                                       //
 // Design Name:    Animal Class                                                                        //
-// Module Name:    animal.sv                                                                           //
-// Project Name:   Basic SystemVerilog OOP Example                                                     //
+// Module Name:    top.sv                                                                              //
+// Project Name:   Configurable constructor                                                            //
 // Language:       SystemVerilog - OOP                                                                 //
 //                                                                                                     //
 // Description:                                                                                        //
-//             This example class aims to demonstrate SystemVerilog Classes and how to utilize 				 //
-//             the class.                                                                              //
+//             This class example aims to demonstrate the use of this handle. The handle "this" points //
+//             to the properties of the class when both the arguments and class propeties have         //
+//			       same name.                                                                              //
 // Revision Date:                                                                                      //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class animal;
 
-	//Class properties
   int age;
   string name;
 
 //Class constructor
-	function new();
-		age = 0;
-		name = "";
+	function new(int age_arg,string name_arg);
+		age  = age_arg; // this is an implicit handle to point the properties of the current object's class
+		name = name_arg;
 	endfunction 
 
 //Method to display properties of the animal
@@ -40,4 +40,9 @@ class animal;
 		#1 age++;
 	endtask
 
+	task makedog();
+		animal a_h;
+		a_h = new(.age_arg(3),.name_arg("Fluffy"));
+	endtask
+	
 endclass

@@ -12,14 +12,14 @@
 // Language:       SystemVerilog - OOP                                                                 //
 //                                                                                                     //
 // Description:                                                                                        //
-//         - This is the top file in which we construct the object of animal class and access its      //
-//           members.                                                                                  //
+//             This is the top file in which we construct the object of animal class and access its    //
+//             members.                                                                                //
 // Revision Date:                                                                                      //
-//                                                                                                     //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 module top;
 `include "animal.sv"
+
 	initial begin
 		animal a_h ; //Animal handle, pointer to animal object
 		a_h = new(); //Allocates memory and makes animal object
@@ -28,4 +28,5 @@ module top;
 		a_h.name = "ABC";
 		a_h.print();
 	end
+	
 endmodule

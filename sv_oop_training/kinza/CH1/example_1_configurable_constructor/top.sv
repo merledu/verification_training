@@ -7,37 +7,26 @@
 //                                                                                                     //
 // Create Date:    18-MARCH-2022                                                                       //
 // Design Name:    Animal Class                                                                        //
-// Module Name:    animal.sv                                                                           //
-// Project Name:   Basic SystemVerilog OOP Example                                                     //
+// Module Name:    top.sv                                                                              //
+// Project Name:   Configurable constructor with "this" handle                                         //
 // Language:       SystemVerilog - OOP                                                                 //
 //                                                                                                     //
 // Description:                                                                                        //
-//             This example class aims to demonstrate SystemVerilog Classes and how to utilize 				 //
-//             the class.                                                                              //
+//            This is the top file in which we construct the object of animal class and access its     //
+//            members.                                                                                 //
 // Revision Date:                                                                                      //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-class animal;
+module top;
+	`include "animal.sv"
+  
+	initial begin
+    animal a_h ; 				 //Animal handle, pointer to animal object
+    a_h = new(10,"ABC"); //Allocates memory and makes animal object
+    a_h.print();
+    a_h.growOld(3);
+    a_h.name = "XYZ";
+    a_h.print();
+  end
 
-	//Class properties
-  int age;
-  string name;
-
-//Class constructor
-	function new();
-		age = 0;
-		name = "";
-	endfunction 
-
-//Method to display properties of the animal
-	function void print();
-		$display("Animal name : %s and age : %0d",name,age);
-	endfunction
-
-//Method to get the age
-	task growOld (int how_long);
-		repeat(how_long)
-		#1 age++;
-	endtask
-
-endclass
+endmodule

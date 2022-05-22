@@ -14,7 +14,6 @@
 // Description:                                                                                      //
 //             The hello_test class is extended by uvm_test to print hello world message.            //
 // Revision Date:                                                                                    //
-//                                                                                                   //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 package hello_pkg;

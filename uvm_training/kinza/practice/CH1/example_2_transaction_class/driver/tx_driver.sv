@@ -12,7 +12,7 @@
 // Language:       SystemVerilog - UVM                                                                 //
 //                                                                                                     //
 // Description:                                                                                        //
-//          tx_driver is a specialized class that carries tx_item.                                     //
+//            tx_driver is a specialized class that carries tx_item.                                   //
 // Revision Date:                                                                                      //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 

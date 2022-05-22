@@ -12,10 +12,9 @@
 // Language:       SystemVerilog - UVM                                                                 //
 //                                                                                                     //
 // Description:                                                                                        //
-//         The tx_item class extends from uvm_sequence_item is used to generate 8-bit random data      //
-//         items.                                                                                      //
+//         		The tx_item class extends from uvm_sequence_item is used to generate 8-bit random data   //
+//         		items.                                                                                   //
 // Revision Date:                                                                                      //
-//                                                                                                     //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class tx_item extends uvm_sequence_item;

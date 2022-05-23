@@ -6,7 +6,7 @@
 // Additional contributions by:                                                                        //
 //                                                                                                     //
 // Create Date:    15-MARCH-2022                                                                       //
-// Design Name:    Animal Class                                                                        //
+// Design Name:    compile file                                                                        //
 // Module Name:    run.f 		                                                                           //
 // Project Name:   Shallow copy Example                   					                                   //
 // Language:       SystemVerilog - OOP                                                                 //

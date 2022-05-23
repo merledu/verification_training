@@ -13,15 +13,14 @@
 //                                                                                                     //
 // Description:                                                                                        //
 //             Top module is responsible to run tx_Test. We pass tx_test as a UVM_TESTNAME on          //
-// 			   the commmand line. run_test() gets the name of the test from the commandline            //
-//             and execute uvm_phases.		                                                           //
+// 			   		 the commmand line. run_test() gets the name of the test from the commandline            //
+//             and execute uvm_phases.		                                                             //
 // Revision Date:                                                                                      //
-//                                                                                                     //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 module top;
 	`include "uvm_macros.svh" //Includes uvm macros utility
-	import uvm_pkg::*; //import uvm base classes
+	import uvm_pkg::*;  //import uvm base classes
 	`include "tx_item.sv"
 	`include "tx_sequence.sv"
 	`include "tx_driver.sv"
@@ -29,5 +28,5 @@ module top;
    	initial begin
 		run_test(); // run_test Start execution of uvm phases
 	end 
-endmodule 
 
+endmodule 

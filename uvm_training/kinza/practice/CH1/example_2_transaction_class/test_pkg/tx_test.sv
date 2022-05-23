@@ -39,8 +39,8 @@ class tx_test extends uvm_test;
         tx_sequence seq;
         seq = tx_sequence::type_id::create("seq");
         phase.raise_objection(this,"Start tx_sequence"); //raise objection then
-        seq.start(env.agt.sqr);                         //start the item in seqr and blocks until the sequence body completes
-        phase.drop_objection(this,"End tx_sequence");   // then drop the objection telling UVM it is done eith the transaction
+        seq.start(env.agt.sqr);                          //start the item in seqr and blocks until the sequence body completes
+        phase.drop_objection(this,"End tx_sequence");    //then drop the objection telling UVM it is done eith the transaction
     endtask
 
     //Print topology report

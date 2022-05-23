@@ -5,18 +5,19 @@
 //                                                                                                     //
 // Additional contributions by:                                                                        //
 //                                                                                                     //
-// Create Date:    18-MARCH-2022                                                                       //
+// Create Date:    15-MARCH-2022                                                                       //
 // Design Name:    compile file                                                                        //
-// Module Name:    run.f                                                                               //
-// Project Name:   Basic SystemVerilog OOP Example                                                     //
+// Module Name:    run.f 		                                                                           //
+// Project Name:   Shallow copy Example                   					                                   //
 // Language:       SystemVerilog - OOP                                                                 //
 //                                                                                                     //
 // Description:                                                                                        //
-//            This file contain names of the files to be compiled, elaborate and simulate.             //
+//             This example demonstrate the utilization of copy constructor.									 				 //
 // Revision Date:                                                                                      //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //Files to be compile
+animal.sv 
 top.sv
 
 //For simulating on Xcelium SimVision GUI mode, uncomment the below line

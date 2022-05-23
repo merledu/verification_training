@@ -8,7 +8,7 @@
 // Create Date:    18-MARCH-2022                                                                       //
 // Design Name:    compile file                                                                        //
 // Module Name:    run.f                                                                               //
-// Project Name:   Basic SystemVerilog OOP Example                                                     //
+// Project Name:   Shallow copy Example                   					                                   //
 // Language:       SystemVerilog - OOP                                                                 //
 //                                                                                                     //
 // Description:                                                                                        //
@@ -17,7 +17,9 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //Files to be compile
-top.sv
+mouth.sv 
+animal.sv 
+top.sv 
 
 //For simulating on Xcelium SimVision GUI mode, uncomment the below line
 //-access +rwc -gui

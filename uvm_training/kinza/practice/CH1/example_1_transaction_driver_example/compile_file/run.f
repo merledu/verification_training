@@ -12,9 +12,8 @@
 // Language:       SystemVerilog - UVM                                                                 //
 //                                                                                                     //
 // Description:                                                                                        //
-//         -  This file contain names of the files to be compiled, elaborate and simulate.             //
+//            This file contain names of the files to be compiled, elaborate and simulate.             //
 // Revision Date:                                                                                      //
-//                                                                                                     //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 -64

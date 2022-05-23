@@ -5,19 +5,28 @@
 //                                                                                                     //
 // Additional contributions by:                                                                        //
 //                                                                                                     //
-// Create Date:    18-MARCH-2022                                                                       //
-// Design Name:    compile file                                                                        //
-// Module Name:    run.f                                                                               //
-// Project Name:   Basic SystemVerilog OOP Example                                                     //
+// Create Date:    15-MARCH-2022                                                                       //
+// Design Name:    Animal Class                                                                        //
+// Module Name:    top.sv                                                                              //
+// Project Name:   Shallow copy Example                   					                                   //
 // Language:       SystemVerilog - OOP                                                                 //
 //                                                                                                     //
 // Description:                                                                                        //
-//            This file contain names of the files to be compiled, elaborate and simulate.             //
+//             This example demonstrate the utilization of copy constructor.									 				 //
 // Revision Date:                                                                                      //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//Files to be compile
-top.sv
+module top;
+`include "animal.sv"
 
-//For simulating on Xcelium SimVision GUI mode, uncomment the below line
-//-access +rwc -gui
+	animal a_h, b_h ; //Animal handle, pointer to animal object
+
+	initial begin
+		a_h = new(12,"XYZ");
+		b_h = new a_h;		// Copy constructor
+		$display(a_h.age,b_h.age);
+		b_h.age=13;
+		$display(a_h.age,b_h.age);
+	end
+	
+endmodule

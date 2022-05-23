@@ -12,7 +12,7 @@
 // Language:       SystemVerilog - UVM                                                                 //
 //                                                                                                     //
 // Description:                                                                                        //
-//          tx_sequence randomizes the sequence item five times and sends them to driver.              //
+//            tx_sequence randomizes the sequence item five times and sends them to driver.            //
 // Revision Date:                                                                                      //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -30,11 +30,11 @@ class tx_sequence extends uvm_sequence #(tx_item);
 		tx_item tx;
 		repeat(5) begin
 			tx = tx_item::type_id::create("tx"); //Body task creates transaction using factory creation
-			start_item(tx);		                //Wait for driver to be ready
-			if (!tx.randomize())		       // Randomize transaction
+			start_item(tx);		                   //Wait for driver to be ready
+			if (!tx.randomize())		             //Randomize transaction
 				`uvm_fatal("Fatal","Randomization Failed")
 			finish_item(tx);		          /* Sends transaction and waits for response from driver to 
-											     know when it is ready again to generate and send transactions again */
+											                 know when it is ready again to generate and send transactions again */
 		end
 	endtask
 

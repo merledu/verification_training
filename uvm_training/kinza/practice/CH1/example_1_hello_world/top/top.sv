@@ -13,9 +13,8 @@
 //                                                                                                   //
 // Description:                                                                                      //
 //             Top module is responsible to run hello_test. We pass hello_test as a UVM_TESTNAME on  //
-// 			   the commmand line. run_test() gets the name of the test and execute uvm_phases.		 //
+// 			       the commmand line. run_test() gets the name of the test and execute uvm_phases.	     //
 // Revision Date:                                                                                    //
-//                                                                                                   //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 module top ;

@@ -6,18 +6,22 @@
 // Additional contributions by:                                                                        //
 //                                                                                                     //
 // Create Date:    18-MARCH-2022                                                                       //
-// Design Name:    compile file                                                                        //
-// Module Name:    run.f                                                                               //
-// Project Name:   Basic SystemVerilog OOP Example                                                     //
+// Design Name:    mouth Class                                                                         //
+// Module Name:    mouth.sv                                                                            //
+// Project Name:   Shallow copy Example                   					                                   //
 // Language:       SystemVerilog - OOP                                                                 //
 //                                                                                                     //
 // Description:                                                                                        //
-//            This file contain names of the files to be compiled, elaborate and simulate.             //
+//            Example of how the copy constructor does not work well on aggregated object.             //
 // Revision Date:                                                                                      //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//Files to be compile
-top.sv
+class mouth;
 
-//For simulating on Xcelium SimVision GUI mode, uncomment the below line
-//-access +rwc -gui
+	int teeth;
+
+function new(int teeth);
+	this.teeth = teeth;
+endfunction
+
+endclass

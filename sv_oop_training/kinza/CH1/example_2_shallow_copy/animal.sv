@@ -6,18 +6,32 @@
 // Additional contributions by:                                                                        //
 //                                                                                                     //
 // Create Date:    18-MARCH-2022                                                                       //
-// Design Name:    compile file                                                                        //
-// Module Name:    run.f                                                                               //
-// Project Name:   Basic SystemVerilog OOP Example                                                     //
+// Design Name:    Animal Class                                                                        //
+// Module Name:    animal.sv                                                                           //
+// Project Name:   Shallow copy Example                   					                                   //
 // Language:       SystemVerilog - OOP                                                                 //
 //                                                                                                     //
 // Description:                                                                                        //
-//            This file contain names of the files to be compiled, elaborate and simulate.             //
+//            Example of how the copy constructor does not work well on aggregated object.             //
 // Revision Date:                                                                                      //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//Files to be compile
-top.sv
+class animal;
 
-//For simulating on Xcelium SimVision GUI mode, uncomment the below line
-//-access +rwc -gui
+	mouth m_h;
+  int age;
+  string name;
+
+//Class constructor
+function new(int age,string name,int teeth);
+  this.age = age;
+	this.name = name;
+	m_h=new(teeth);
+endfunction 
+
+//Method to display properties of the animal
+function void print();
+	$display("Animal name : %s and age : %0d",name,age);
+endfunction
+
+endclass

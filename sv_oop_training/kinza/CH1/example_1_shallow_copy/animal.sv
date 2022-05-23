@@ -5,19 +5,41 @@
 //                                                                                                     //
 // Additional contributions by:                                                                        //
 //                                                                                                     //
-// Create Date:    18-MARCH-2022                                                                       //
-// Design Name:    compile file                                                                        //
-// Module Name:    run.f                                                                               //
-// Project Name:   Basic SystemVerilog OOP Example                                                     //
+// Create Date:    15-MARCH-2022                                                                       //
+// Design Name:    Animal Class                                                                        //
+// Module Name:    animal.sv                                                                           //
+// Project Name:   Shallow copy Example                   					                                   //
 // Language:       SystemVerilog - OOP                                                                 //
 //                                                                                                     //
 // Description:                                                                                        //
-//            This file contain names of the files to be compiled, elaborate and simulate.             //
+//             This example demonstrate the utilization of copy constructor.									 				 //
 // Revision Date:                                                                                      //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//Files to be compile
-top.sv
+class animal;
+  int age;
+  string name;
 
-//For simulating on Xcelium SimVision GUI mode, uncomment the below line
-//-access +rwc -gui
+//Class constructor
+function new(int age,string name);
+  this.age = age;
+	this.name = name;
+endfunction 
+
+//Method to display properties of the animal
+function void print();
+	$display("Animal name : %s and age : %0d",name,age);
+endfunction
+
+//Method to get the age
+task growOld (int how_long);
+	repeat(how_long)
+	#1 age++;
+endtask
+
+task makedog();
+	animal a_h;
+	a_h = new(.age(3),.name("Fluffy"));
+endtask
+
+endclass

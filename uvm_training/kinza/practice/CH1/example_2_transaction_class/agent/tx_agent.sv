@@ -12,7 +12,7 @@
 // Language:       SystemVerilog - UVM                                                                 //
 //                                                                                                     //
 // Description:                                                                                        //
-//          tx_agent builds and connects driver and sequencer.                                         //
+//         		 tx_agent builds and connects driver and sequencer.                                      //
 // Revision Date:                                                                                      //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -23,7 +23,7 @@ class tx_agent extends uvm_agent;
 
     //constructor
     function new(string name,uvm_component parent);
-        super.new(name,parent);
+      super.new(name,parent);
     endfunction
 
     tx_driver drv;
@@ -32,14 +32,14 @@ class tx_agent extends uvm_agent;
 
     //building the components inside the hierarchy of agent class
     virtual function void build_phase(uvm_phase phase);
-        drv = tx_driver::type_id::create("drv",this);
-        sqr = new("sqr",this);
+      drv = tx_driver::type_id::create("drv",this);
+      sqr = new("sqr",this);
     //	mon = tx_monitor::type_id::create("mon",this);
     endfunction
 
     //connectng the components inside the hierarchy of agent class
     virtual function void connect_phase(uvm_phase phase);	
-        drv.seq_item_port.connect(sqr.seq_item_export);
+       drv.seq_item_port.connect(sqr.seq_item_export);
     endfunction
     
 endclass

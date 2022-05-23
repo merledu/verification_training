@@ -12,9 +12,8 @@
 // Language:       SystemVerilog - UVM                                                                 //
 //                                                                                                     //
 // Description:                                                                                        //
-//          tx_driver is a specialized class that carries tx_item.                                     //
+//            tx_driver is a specialized class that carries tx_item.                                   //
 // Revision Date:                                                                                      //
-//                                                                                                     //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class tx_driver extends uvm_driver #(tx_item); //Specialized class with tx_item
@@ -31,7 +30,7 @@ class tx_driver extends uvm_driver #(tx_item); //Specialized class with tx_item
 		tx_item tx;
 		forever begin
 			seq_item_port.get_next_item(tx); //driver gets the tx_item through the blocking TLM port
-			transfer(tx); //Call transfer function
+			transfer(tx); 								   //Call transfer function
 			seq_item_port.item_done();	
 		end
 	endtask

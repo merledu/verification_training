@@ -16,7 +16,6 @@
 // 			       the commmand line. run_test() gets the name of the test from the commandline            //
 //             and execute uvm_phases.		                                                             //
 // Revision Date:                                                                                      //
-//                                                                                                     //
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 module top;
